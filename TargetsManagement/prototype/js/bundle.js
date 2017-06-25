@@ -86277,8 +86277,6 @@
 	    null,
 	    _react2.default.createElement(_semanticUiReact.Icon, { name: 'commenting outline', color: 'blue', size: 'large' }),
 	    _react2.default.createElement('p', null),
-	    _react2.default.createElement(_semanticUiReact.Icon, { name: 'write', color: 'blue', size: 'large' }),
-	    _react2.default.createElement('p', null),
 	    _react2.default.createElement(
 	      'div',
 	      { style: {

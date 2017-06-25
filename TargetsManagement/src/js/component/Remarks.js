@@ -13,8 +13,6 @@ export default function Remarks() {
     <div>
       <Icon name='commenting outline' color='blue' size='large' />
       <p></p>
-      <Icon name='write' color='blue' size='large' />
-      <p></p>
       <div style={{
         textAlign: 'left'
       }}>
