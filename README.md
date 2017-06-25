@@ -1,2 +1,2 @@
 # Prototypes
-Prototypes for projects
+The prototypes used to develop projects
