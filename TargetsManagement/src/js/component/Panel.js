@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Remarks from './Remarks'
+
 import {
   Button,
   Grid,
@@ -76,7 +78,7 @@ export default function Panel() {
       </Row>
       {/* Timer and Repeat} */}
 
-      {/*timing nfo{ */}
+      {/*timing Info{ */}
       <Row centered>
         <Column width={6}>
           <Segment textAlign='center' >
@@ -93,6 +95,16 @@ export default function Panel() {
         </Column>
       </Row>
       {/* timingInfo} */}
+
+
+      {/* Remarks{ */}
+      <Row centered>
+        <Column width={12}  textAlign='right'>
+          <Remarks />
+        </Column>
+      </Row>
+      {/* Remarks} */}      
+
 
       {/* Confirm Btn{ */}
       <Row centered>

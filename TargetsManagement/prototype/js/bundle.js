@@ -87,7 +87,7 @@
 
 
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, "html, body {\n  width: 100%;\n  height: 100%;\n  overflow-x: hidden; }\n\n#TargetsManagement #caveat {\n  position: fixed;\n  top: 1.5%;\n  left: 1.5%;\n  z-index: 9;\n  width: 97%;\n  text-align: center; }\n\n#TargetsManagement #AddBtn {\n  position: fixed;\n  bottom: 10%;\n  right: 10%; }\n\n#TargetsManagement .ListItem {\n  margin: 5px;\n  word-break: break-all; }\n  #TargetsManagement .ListItem .Label {\n    color: #975b33; }\n\n#TargetsManagement .ui.selection.dropdown .menu {\n  max-height: 20.03571rem !important; }\n\n/* { common */\n.center {\n  text-align: center !important; }\n\n/* } common */\n", ""]);
 
 	// exports
 
@@ -30604,92 +30604,95 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var showSingle = /single/.test(window.location.href);
+
 	var TargetsManagement = function TargetsManagement() {
 	  return _React2.default.createElement(
 	    'div',
-	    null,
-	    _React2.default.createElement(_Topbar2.default, null),
-	    _React2.default.createElement(_ItemContainer2.default, null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement(_Timeline2.default, null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement(_Recycle2.default, null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement(_Panel2.default, null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement(_TimeSelector2.default, null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement(_Modals2.default, null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement('br', null),
-	    _React2.default.createElement(_Caveat2.default, null)
+	    { id: 'TargetsManagement' },
+	    showSingle && _React2.default.createElement(_Panel2.default, null),
+	    !showSingle && _React2.default.createElement(
+	      'div',
+	      null,
+	      _React2.default.createElement(_Topbar2.default, null),
+	      _React2.default.createElement(_ItemContainer2.default, null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement(_Timeline2.default, null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement(_Recycle2.default, null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement(_Panel2.default, null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement(_TimeSelector2.default, null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement(_Modals2.default, null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement('br', null),
+	      _React2.default.createElement(_Caveat2.default, null)
+	    )
 	  );
 	};
 
@@ -64963,6 +64966,36 @@
 	      { centered: true },
 	      _react2.default.createElement(
 	        Column,
+	        { width: 14 },
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(_semanticUiReact.Dropdown, { defaultValue: 0, open: true, fluid: true, selection: true, options: [{
+	              text: '目标类型1',
+	              value: 0
+	            }, {
+	              text: '目标类型2',
+	              value: 1
+	            }, {
+	              text: '目标类型3',
+	              value: 2
+	            }] })
+	        )
+	      )
+	    ),
+	    _react2.default.createElement('br', null),
+	    _react2.default.createElement('br', null),
+	    _react2.default.createElement('br', null),
+	    _react2.default.createElement('br', null),
+	    _react2.default.createElement('br', null),
+	    _react2.default.createElement('br', null),
+	    _react2.default.createElement('br', null),
+	    _react2.default.createElement('p', null),
+	    _react2.default.createElement(
+	      Row,
+	      { centered: true },
+	      _react2.default.createElement(
+	        Column,
 	        { width: 15 },
 	        _react2.default.createElement(
 	          _semanticUiReact.Accordion,
@@ -65098,6 +65131,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _Remarks = __webpack_require__(1255);
+
+	var _Remarks2 = _interopRequireDefault(_Remarks);
+
 	var _semanticUiReact = __webpack_require__(487);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -65216,6 +65253,15 @@
 	            '0000/00/00'
 	          )
 	        )
+	      )
+	    ),
+	    _react2.default.createElement(
+	      Row,
+	      { centered: true },
+	      _react2.default.createElement(
+	        Column,
+	        { width: 12, textAlign: 'right' },
+	        _react2.default.createElement(_Remarks2.default, null)
 	      )
 	    ),
 	    _react2.default.createElement(
@@ -86176,16 +86222,77 @@
 	function Caveat() {
 	  return _react2.default.createElement(
 	    'div',
-	    { id: 'caveat', style: {
-	        padding: '10px'
+	    { style: {
+	        textAlign: 'center',
+	        padding: '20px'
 	      } },
+	    _react2.default.createElement(_semanticUiReact.Button, { content: '\u663E\u793A/\u9690\u85CF\u9519\u8BEF\u63D0\u793A', onClick: function onClick() {
+	        var dom = document.getElementById('caveat');
+	        if (dom.style.display === 'none') {
+	          dom.style.display = 'block';
+	        } else {
+	          dom.style.display = 'none';
+	        }
+	      } }),
 	    _react2.default.createElement(
-	      _semanticUiReact.Message,
-	      { negative: true },
+	      'div',
+	      { id: 'caveat', style: {
+	          display: 'none'
+	        } },
 	      _react2.default.createElement(
-	        _semanticUiReact.Message.Header,
+	        _semanticUiReact.Message,
+	        { negative: true },
+	        _react2.default.createElement(
+	          _semanticUiReact.Message.Header,
+	          null,
+	          '\u63D0\u793A\u5185\u5BB9'
+	        )
+	      )
+	    )
+	  );
+	}
+
+/***/ },
+/* 1255 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.default = Remarks;
+
+	var _react = __webpack_require__(302);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _semanticUiReact = __webpack_require__(487);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function Remarks() {
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    _react2.default.createElement(_semanticUiReact.Icon, { name: 'commenting outline', color: 'blue', size: 'large' }),
+	    _react2.default.createElement('p', null),
+	    _react2.default.createElement(_semanticUiReact.Icon, { name: 'write', color: 'blue', size: 'large' }),
+	    _react2.default.createElement('p', null),
+	    _react2.default.createElement(
+	      'div',
+	      { style: {
+	          textAlign: 'left'
+	        } },
+	      _react2.default.createElement(
+	        _semanticUiReact.Message,
+	        { color: 'yellow' },
+	        'Blue'
+	      ),
+	      _react2.default.createElement(
+	        _semanticUiReact.Form,
 	        null,
-	        '\u63D0\u793A\u5185\u5BB9'
+	        _react2.default.createElement(_semanticUiReact.TextArea, { rows: 3, placeholder: '\u5907\u6CE8\u5185\u5BB9' })
 	      )
 	    )
 	  );

@@ -6,7 +6,8 @@ import {
   Button,
   Accordion,
   Icon,
-  Grid
+  Grid,
+  Dropdown
 } from 'semantic-ui-react'
 const { Row, Column } = Grid
 
@@ -22,6 +23,32 @@ export default function Timeline() {
           <Button content='返回' fluid color='teal' />
         </Column>
       </Row>
+
+      <p></p>
+
+      <Row centered>
+        <Column width={14}>
+          <div>
+            <Dropdown defaultValue={0} open fluid selection options={[
+              {
+                text: '目标类型1',
+                value: 0
+              },
+              {
+                text: '目标类型2',
+                value: 1
+              },
+              {
+                text: '目标类型3',
+                value: 2
+              }
+            ]} ></Dropdown>
+          </div>
+        </Column>
+      </Row>
+
+      <br /><br /><br /><br /><br /><br /><br />
+
 
       <p></p>
 
@@ -50,10 +77,10 @@ export default function Timeline() {
                     <div>
                       <Accordion defaultActiveIndex={0} key={1}>
                         <Accordion.Title>
-                          
-                            &nbsp;&nbsp;&nbsp;&nbsp;
+
+                          &nbsp;&nbsp;&nbsp;&nbsp;
                     <Icon name='dropdown' />
-                            day
+                          day
                         </Accordion.Title>
                         <Accordion.Content>
                           <Items />

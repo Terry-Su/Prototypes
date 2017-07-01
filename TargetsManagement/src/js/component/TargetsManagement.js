@@ -9,37 +9,49 @@ import TimeSelector from './TimeSelector'
 import Modals from './Modals'
 import Caveat from './Caveat'
 
+const showSingle = /single/.test(window.location.href)
+
 
 const TargetsManagement = () => {
   return (
-    <div>
-      <Topbar />
+    <div id="TargetsManagement">
+      {
+        showSingle &&
+        <Panel />
+      }
+      {
+        !showSingle &&
+        <div>
+          <Topbar />
 
-      <ItemContainer />
+          <ItemContainer />
 
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-      <Timeline />
+          <Timeline />
 
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-      
-      <Recycle />
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-      
-      <Panel />
+          <Recycle />
 
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/>      
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-      <TimeSelector />
+          <Panel />
 
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/>            
+          <br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-      <Modals />
-      
-      <br/><br/><br/><br/><br/><br/><br/><br/><br/>                  
+          <TimeSelector />
 
-      <Caveat />
+          <br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+          <Modals />
+
+          <br /><br /><br /><br /><br />
+
+          <Caveat />
+        </div>
+      }
+
     </div>
   )
 }
