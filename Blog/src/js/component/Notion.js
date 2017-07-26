@@ -1,10 +1,11 @@
 import React from 'react'
+import { Card } from 'antd'
 
 
 export default function Notion() {
   return (
-    <div>
+    <Card>
       Notion
-    </div>
+    </Card>
   )
 }

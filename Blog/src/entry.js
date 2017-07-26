@@ -1,5 +1,7 @@
 // style
+import 'antd/dist/antd.css'
 import './sass/app.scss'
+
 
 // polyfill
 import 'babel-polyfill'
