@@ -4,9 +4,6 @@ var NODE_DEV = process.env.NODE_DEV
 var NODE_ENV = process.env.NODE_ENV
 
 
-/**
- * 0 - TargetsManagement
- */
 var isProduction = false;
 
 var plugins = [];

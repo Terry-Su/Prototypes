@@ -9,9 +9,8 @@ export default function Breadcrumb() {
     <div>
       <AntdBreadcrumb>
         <AntdBreadcrumb.Item>Home</AntdBreadcrumb.Item>
-        <AntdBreadcrumb.Item><a href="">Application Center</a></AntdBreadcrumb.Item>
-        <AntdBreadcrumb.Item><a href="">Application List</a></AntdBreadcrumb.Item>
-        <AntdBreadcrumb.Item>An Application</AntdBreadcrumb.Item>
+        <AntdBreadcrumb.Item><a href="#">List Name</a></AntdBreadcrumb.Item>
+        <AntdBreadcrumb.Item><a href="#">Blog Name</a></AntdBreadcrumb.Item>
       </AntdBreadcrumb>
     </div>
   )

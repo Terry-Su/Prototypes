@@ -1,23 +1,29 @@
 import React from 'react'
 
-import { Card, Col, Row } from 'antd'
+import {
+  Card,
+  Col,
+  Row,
+  Menu
+} from 'antd'
+
+import NewestColumnItem from './NewestColumnItem'
+
 
 export default function NewestColumn() {
   return (
     <div>
-      <Row gutter={1}>
-        <Col span={18}>
-          <Card title="NewestColumn" bordered={false}>
-              <ul>
-                <li>Blog title 1</li>
-                <li>Blog title 2</li>
-                <li>Blog title 3</li>
-                <li>Blog title 4</li>
-                <li>Blog title 5</li>
-              </ul>
-          </Card>
-        </Col>
-      </Row>
+      <Card title={
+        <h3 style={{
+          textAlign: 'center'
+        }}>The newest</h3>
+      } noHovering bordered={false}>
+        <NewestColumnItem>Fri Jul 28 2017  Blog title 1</NewestColumnItem>
+        <NewestColumnItem>Fri Jul 28 2017  Blog title 2</NewestColumnItem>
+        <NewestColumnItem>Fri Jul 28 2017  Blog title 3</NewestColumnItem>
+        <NewestColumnItem>Fri Jul 28 2017  Blog title 4</NewestColumnItem>
+        <NewestColumnItem>Fri Jul 28 2017  Blog title 5</NewestColumnItem>
+      </Card>
     </div>
   )
 }

@@ -1,11 +1,24 @@
 import React from 'react'
-import { Card } from 'antd'
+import {
+  Layout
+} from 'antd'
 
+const {
+  Header
+} = Layout
 
 export default function Notion() {
   return (
-    <Card>
-      Notion
-    </Card>
+    <div>
+      <Header style={{
+        backgroundColor: 'white'
+      }}>
+        <h1 style={{
+          color: 'black'
+        }}>
+          Terry Su's Blog
+        </h1>
+      </Header>
+    </div>
   )
 }
