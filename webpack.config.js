@@ -1,23 +1,17 @@
 var webpack = require('webpack');
 var path = require('path');
+var NODE_DEV = process.env.NODE_DEV
+var NODE_ENV = process.env.NODE_ENV
+
 
 /**
  * 0 - TargetsManagement
  */
-var mode = 0;
-
 var isProduction = false;
 
 var plugins = [];
 
-try {
-  mode = /\d+/.exec(process.argv.filter(arg => /devmode/.test(arg))[0])[0];
-  isProduction = process.argv.filter(arg => /devProd/.test(arg)).length > 0;
-} catch (e) {
-
-}
-
-if (isProduction) {
+if (NODE_ENV === 'prod') {
   plugins.push(new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'));
   plugins.push(new webpack.DefinePlugin({
     'process.env': {
@@ -28,42 +22,65 @@ if (isProduction) {
 }
 
 
-var entryMap = {
-  '0': './TargetsManagement/src/entry.js'
-}
-
-var outputMap = {
+var map = {
   '0': {
-    path: path.resolve(__dirname, 'TargetsManagement/prototype/js'),
-    filename: 'bundle.js'
+    entry: './TargetsManagement/src/entry.js',
+    output: {
+      path: path.resolve(__dirname, 'TargetsManagement/prototype/js'),
+      filename: 'bundle.js'
+    }
+  },
+  '1': {
+    entry: './Blog/src/entry.js',
+    output: {
+      path: path.resolve(__dirname, 'Blog/prototype/js'),
+      filename: 'bundle.js'
+    }
   }
 }
 
-var entry = entryMap[mode]
-var output = outputMap[mode]
+var entry = map[NODE_DEV].entry
+var output = map[NODE_DEV].output
 
 
 module.exports = {
   entry: entry,
   output: output,
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js.*/,
-        loader: 'babel-loader',
         exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'stage-2', 'react']
-        }
-      },
-      {
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['es2015', 'stage-2', 'react']
+            }
+          }
+        ]
+      }, {
         test: /\.css?/,
-        loader: "style!css"
-      },
-      {
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          }
+        ]
+      }, {
         test: /\.scss?/,
         exclude: /node_modules/,
-        loader: "style!css!sass"
+        use: [
+          {
+            loader: 'style-loader'
+          }, {
+            loader: 'css-loader'
+          }, {
+            loader: "sass-loader"
+          }
+        ]
       }
     ]
   },
