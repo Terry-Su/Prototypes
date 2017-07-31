@@ -20,11 +20,14 @@ const {
 export default function ListPage() {
   return (
     <div>
-      <Header style={{
-        backgroundColor: 'white'
-      }}>
-        <Breadcrumb />
-      </Header>
+      <br />
+      <Row type='flex' justify='center'>
+        <Col xs={1} sm={1} />
+        <Col xs={23} sm={23}>
+          <Breadcrumb />
+        </Col>
+      </Row>
+      <br /><br />
       <Row type="flex" justify={'center'}>
         <Col xs={0} sm={1}/>
         <Col xs={23} sm={6}>

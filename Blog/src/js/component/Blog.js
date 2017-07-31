@@ -22,7 +22,7 @@ export default function Blog() {
   return (
     <div>
       {
-        1 ?
+        0 ?
           <Router>
             <div>
               <h1 style={{
@@ -46,7 +46,7 @@ export default function Blog() {
             </div>
           </Router>
           :
-          <DetailPage />
+          <HomePage />
       }
     </div>
   )

@@ -8,7 +8,9 @@ export default function Catalog() {
     <div>
       <div>
         <Menu style={{
-          border: 'none'
+          border: '1px #dfdfdf solid',
+          borderRadius: '8px',
+          padding: '12px 0'
         }} >
           {
             [...'12345'].map((v, i) =>

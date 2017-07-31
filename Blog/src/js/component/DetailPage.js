@@ -16,11 +16,6 @@ const {
 export default function DetailPage() {
   return (
     <div>
-      {/*<Header style={{
-        backgroundColor: 'white'
-      }}>
-        <Breadcrumb />
-      </Header>*/}
       <br />
       <Row type='flex' justify='center'>
         <Col xs={1} sm={1} />
