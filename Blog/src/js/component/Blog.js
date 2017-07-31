@@ -21,26 +21,33 @@ function Separate() {
 export default function Blog() {
   return (
     <div>
-      {/*<Router>
-        <div>
-          <h1 style={{
-            textAlign: 'center'
-          }}>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/list">list</Link></li>
-              <li><Link to="/detail">detail</Link></li>
-              <li><Link to="/laboratory">laboratory</Link></li>
-            </ul>
-          </h1>
+      {
+        1 ?
+          <Router>
+            <div>
+              <h1 style={{
+                textAlign: 'center'
+              }}>
+                <ul>
+                  <li><Link to="/">Home</Link></li>
+                  <br />
+                  <li><Link to="/list">list</Link></li>
+                  <br />
+                  <li><Link to="/detail">detail</Link></li>
+                  <br />
+                  <li><Link to="/laboratory">laboratory</Link></li>
+                </ul>
+              </h1>
 
-          <Route exact path="/" component={HomePage} />
-          <Route path="/list" component={ListPage} />
-          <Route path="/detail" component={DetailPage} />
-          <Route path="/laboratory" component={LaboratoryPage} />
-        </div>
-      </Router>*/}
-      <HomePage />
+              <Route exact path="/" component={HomePage} />
+              <Route path="/list" component={ListPage} />
+              <Route path="/detail" component={DetailPage} />
+              <Route path="/laboratory" component={LaboratoryPage} />
+            </div>
+          </Router>
+          :
+          <DetailPage />
+      }
     </div>
   )
 }

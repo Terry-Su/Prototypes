@@ -1,5 +1,9 @@
 import React from 'react'
-import { Col, Row } from 'antd'
+import {
+  Col,
+  Row,
+  Layout,
+} from 'antd'
 
 import Breadcrumb from './Breadcrumb'
 import Catalog from './Catalog'
@@ -8,30 +12,36 @@ import ListBox from './ListBox'
 import NewestColumn from './NewestColumn'
 import Notion from './Notion'
 import Detail from './Detail'
+import Copyright from './Copyright'
+
+
+const {
+  Content
+} = Layout
 
 
 export default function HomePage() {
   return (
     <div>
-      <Row type="flex" gutter={1} justify={'center'}>
-        <Col span={23}>
-          <br/>
-          <Notion />
-          <br/>
-          <Row>
-            <Col span={16}>
-              <NewestColumn />
-            </Col>
-            <Col span={6} offset={2}>
-              <Catalog />
-            </Col>
-
-          </Row>
-
-
-
-        </Col>
-      </Row>
+      <br />
+      <Notion />
+      <br /><br /><br />
+      <Content>
+        <Row type="flex" gutter={1} justify={'center'}>
+          <Col xs={0} sm={1}/>
+          <Col xs={20} sm={8}>
+            <NewestColumn />
+          </Col>
+          <Col xs={0} sm={2}/>
+          <Col xs={20} sm={6}>
+            <br />
+            <Catalog />
+          </Col>
+          <Col xs={0} sm={1}/>
+        </Row>
+      </Content>
+      <br /><br /><br />
+      <Copyright />
     </div>
   )
 }
