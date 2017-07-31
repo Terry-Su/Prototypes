@@ -8,9 +8,10 @@ export default function ListBox() {
   return (
     <div>
       <Card noHovering bordered={false}>
-        {[...'12345'].map((v, i) => (
+        {
+          [...'123456'].map((v, i) => (
           <div key={i} style={{
-            padding: '5px 0 5px 20px'
+            padding: '20px 0 20px 0'
           }}>
             <ListBoxItem />
           </div>
