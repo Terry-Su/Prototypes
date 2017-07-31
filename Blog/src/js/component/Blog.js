@@ -22,23 +22,21 @@ export default function Blog() {
   return (
     <div>
       {
-        // dev single page or not
-        0 ?
-          <DetailPage />
-          :
+        1 ?
           <Router>
             <div>
               <h1 style={{
                 textAlign: 'center'
               }}>
-              <br/>
-                <Link to="/">Home</Link>
-                &nbsp;&nbsp;&nbsp;
-                <Link to="/list">list</Link>
-                &nbsp;&nbsp;&nbsp;
-                <Link to="/detail">detail</Link>
-                &nbsp;&nbsp;&nbsp;
-                <Link to="/laboratory">laboratory</Link>
+                <ul>
+                  <li><Link to="/">Home</Link></li>
+                  <br />
+                  <li><Link to="/list">list</Link></li>
+                  <br />
+                  <li><Link to="/detail">detail</Link></li>
+                  <br />
+                  <li><Link to="/laboratory">laboratory</Link></li>
+                </ul>
               </h1>
 
               <Route exact path="/" component={HomePage} />
@@ -47,8 +45,9 @@ export default function Blog() {
               <Route path="/laboratory" component={LaboratoryPage} />
             </div>
           </Router>
+          :
+          <HomePage />
       }
-
     </div>
   )
 }

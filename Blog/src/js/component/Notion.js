@@ -16,7 +16,7 @@ export default function Notion() {
         <h1 style={{
           color: 'black'
         }}>
-          Terry Su's Blog
+          Terry Su 的博客
         </h1>
       </Header>
     </div>

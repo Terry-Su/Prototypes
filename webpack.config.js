@@ -1,13 +1,13 @@
 var webpack = require('webpack');
 var path = require('path');
+var express = require('express')
+var app = express()
 var NODE_DEV = process.env.NODE_DEV
 var NODE_ENV = process.env.NODE_ENV
+var NODE_PORT = process.env.NODE_PORT
 
 
-var isProduction = false;
-
-var plugins = [];
-
+var plugins = []
 if (NODE_ENV === 'prod') {
   plugins.push(new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'));
   plugins.push(new webpack.DefinePlugin({
@@ -83,3 +83,8 @@ module.exports = {
   },
   plugins: plugins
 }
+
+
+// local server
+app.use(express.static(__dirname))
+app.listen(NODE_PORT)
