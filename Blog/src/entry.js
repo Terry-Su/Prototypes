@@ -2,7 +2,8 @@
 import 'antd/dist/antd.css'
 import './sass/app.scss'
 import './sass/highlight.css'
-import './sass/markdown.scss'
+import './sass/ts_markdown.scss'
+// import './sass/bootstrap.css'
 
 
 // polyfill

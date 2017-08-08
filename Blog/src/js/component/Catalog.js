@@ -5,7 +5,11 @@ import Tags from './Tags'
 
 export default function Catalog() {
   return (
-    <div>
+    <div style={{
+      border: '1px solid #ddd',
+      borderRadius: '10px',
+      padding: '10px'
+    }}>
       <div>
         <Menu style={{
           border: 'none'

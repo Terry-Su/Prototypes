@@ -9,9 +9,9 @@ import DetailBoxInfo from './DetailBoxInfo'
 export default function DetailBox() {
   return (
     <div id="detail">
-      <h1 style={{
+      <h1 id='blog_title' style={{
         textAlign: 'center'
-      }}>博客的标题</h1>
+      }}>The title of blog</h1>
       <br />
       <DetailBoxContent />
       <br />
