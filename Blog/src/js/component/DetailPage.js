@@ -3,11 +3,13 @@ import {
   Col,
   Row,
   Layout,
+  BackTop,
 } from 'antd'
 
 import Breadcrumb from './Breadcrumb'
 import DetailBox from './DetailBox'
 import Copyright from './Copyright'
+import BackToTop from './BackToTop'
 
 const {
   Header
@@ -26,11 +28,19 @@ export default function DetailPage() {
       <br /><br />
       <Row type='flex' justify='center'>
         <Col xs={23} sm={18}>
-          <DetailBox/>
+          <DetailBox />
         </Col>
       </Row>
-
-      <br /><br /><br />
+      <Row style={{
+        paddingTop: '50px'
+      }}>
+        <Col span={22} style={{
+          textAlign: 'right'
+        }}>
+          <BackToTop />
+        </Col>
+        <Col xs={1} sm={1}></Col>
+      </Row>
       <Copyright />
     </div>
   )
