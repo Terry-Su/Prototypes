@@ -1,29 +1,45 @@
 import React from 'react'
-import {
-  Tag
-} from 'antd'
+import Button from 'material-ui/Button'
+import { withStyles } from 'material-ui/styles'
+import Chip from 'material-ui/Chip'
 
-function TagBox({ color, children }) {
-  return (
-    <span style={{
-      display: 'inline-block',
-      padding: '5px'
-    }} >
-      <Tag color={color} >
-        {children}
-      </Tag>
-    </span>
-  )
-}
+const styles = theme => {
+  console.log(1, theme)
+  return ({
+    chip: {
+      backgroundColor: '#d2eafb',
+      color: '#108ee9'
+    }
+  })
+};
 
-export default function Tags() {
+
+export default withStyles(styles)(Tags)
+
+function Tags({
+  classes
+}) {
   return (
     <div style={{
       padding: '10px'
     }}>
       {
-        [...'12345'].map((v, i) => <TagBox key={i} color={'blue'}>标签{v}</TagBox>)
+        [...'12345'].map((v, i) => <Tag key={i} classes={classes} color={'blue'}>标签{v}</Tag>)
       }
     </div>
   )
 }
+
+
+function Tag({ color, children, classes }) {
+  console.log(classes)
+  return (
+    <span style={{
+      display: 'inline-block',
+      padding: '5px'
+    }} >
+      <Chip label={children} className={classes.chip}/>
+    </span>
+  )
+}
+

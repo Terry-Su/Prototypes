@@ -9,7 +9,9 @@ import Catalog from './Catalog'
 import NewestColumn from './NewestColumn'
 import Notion from './Notion'
 import Detail from './Detail'
+import AboutMe from './AboutMe'
 import Copyright from './Copyright'
+import UITest from './UITest'
 
 
 const {
@@ -20,6 +22,7 @@ const {
 export default function HomePage() {
   return (
     <div>
+      {/* <UITest /> */}
       <br />
       <Notion />
       <br /><br /><br />
@@ -38,6 +41,7 @@ export default function HomePage() {
         </Row>
       </Content>
       <br /><br /><br />
+      <AboutMe />
       <Copyright />
     </div>
   )

@@ -1,7 +1,11 @@
 import React from 'react'
 import { Menu } from 'antd'
+import Paper from 'material-ui/Paper'
+import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
+
 
 import Tags from './Tags'
+
 
 export default function Catalog() {
   return (
@@ -10,20 +14,17 @@ export default function Catalog() {
       borderRadius: '10px',
       padding: '10px'
     }}>
-      <div>
-        <Menu style={{
-          border: 'none'
-        }} >
+      <Paper>
+        <List>
           {
-            [...'12345'].map((v, i) =>
-              <Menu.Item key={i}>
-                <div>目录{v}</div>
-              </Menu.Item>
-            )
+            [...'12345'].map((v, i) => (
+              <ListItem key={i} button>目录{i + 1}</ListItem>
+            ))
           }
-        </Menu>
+        </List>
+        
         <Tags />
-      </div>
+      </Paper>
     </div>
   )
 }

@@ -1,43 +1,51 @@
 import React from 'react'
 
-import {
-  Card,
-  Col,
-  Row,
-  Menu
-} from 'antd'
+// import {
+//   Col,
+//   Row,
+//   Menu
+// } from 'antd'
+import Grid from 'material-ui/Grid'
+import Paper from 'material-ui/Paper'
+import Hidden from 'material-ui/Hidden'
+import Typography from 'material-ui/Typography'
+import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
 
-import NewestColumnItem from './NewestColumnItem'
 
 
 export default function NewestColumn() {
   return (
     <div>
-      <Card title={
+      <Paper>
         <h2 style={{
-          textAlign: 'center'
-        }}>最新博客</h2>
-      } noHovering bordered={false} style={{
-        textAlign: 'left'
-      }}>
-        {
-          [...'12345'].map((v, i) => <div key={i} style={{
-            padding: '10px 0 10px 0'
-          }}>
-            <a href="javascript:">
-              <span style={{
-                paddingLeft: '20px',
-                color: '#555'
-              }}>2017/07/31 </span>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <h3 style={{
-                display: 'inline',
-              }}>博客的标题{Math.pow(i, 10)}</h3>
-            </a>
-          </div>)
-        }
-
-      </Card>
+          textAlign: 'center',
+          padding: '5px',
+          borderBottom: '1px solid #ccc'
+        }}>
+          {/* The newest */}
+        </h2>
+        <Typography type='title'>
+          test
+        </Typography>
+        <List>
+          {
+            [...'12345'].map((v, i) => (
+              <ListItem key={i}>
+                <Grid container>
+                  <Hidden only={['sm', 'xs']}>
+                    <Grid item md={4}>
+                      2017/08/21
+                  </Grid>
+                  </Hidden>
+                  <Grid item md={8} sm={12}>
+                    博客的标题{Math.pow(i + 1, 10)}
+                  </Grid>
+                </Grid>
+              </ListItem>
+            ))
+          }
+        </List>
+      </Paper>
     </div>
   )
 }

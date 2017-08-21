@@ -10,6 +10,7 @@ import Breadcrumb from './Breadcrumb'
 import DetailBox from './DetailBox'
 import Copyright from './Copyright'
 import BackToTop from './BackToTop'
+import AboutMe from './AboutMe'
 
 const {
   Header
@@ -41,6 +42,8 @@ export default function DetailPage() {
         </Col>
         <Col xs={1} sm={1}></Col>
       </Row>
+      
+      <AboutMe />
       <Copyright />
     </div>
   )

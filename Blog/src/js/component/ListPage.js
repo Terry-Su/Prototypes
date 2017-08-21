@@ -8,6 +8,7 @@ import {
 import Breadcrumb from './Breadcrumb'
 import Catalog from './Catalog'
 import ListBox from './ListBox'
+import AboutMe from './AboutMe'
 import Copyright from './Copyright'
 
 
@@ -42,6 +43,7 @@ export default function ListPage() {
       </Row>
 
       <br /><br /><br />
+      <AboutMe />
       <Copyright />
     </div>
   )

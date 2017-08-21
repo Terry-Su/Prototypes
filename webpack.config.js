@@ -7,6 +7,7 @@ var NODE_ENV = process.env.NODE_ENV
 var NODE_PORT = process.env.NODE_PORT
 
 
+
 var plugins = []
 if (NODE_ENV === 'prod') {
   plugins.push(new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'));
@@ -25,19 +26,34 @@ var map = {
     output: {
       path: path.resolve(__dirname, 'TargetsManagement/prototype/js'),
       filename: 'bundle.js'
-    }
+    },
+    publicPath: './TargetsManagement/prototype'
   },
   '1': {
     entry: './Blog/src/entry.js',
     output: {
       path: path.resolve(__dirname, 'Blog/prototype/js'),
       filename: 'bundle.js'
-    }
+    },
+    publicPath: './Blog/prototype'
   }
 }
 
 var entry = map[NODE_DEV].entry
 var output = map[NODE_DEV].output
+var publicPath = map[NODE_DEV].publicPath
+
+// server
+if (NODE_ENV === 'dev') {
+  app.use(express.static(path.resolve(__dirname, publicPath)))
+  // 404
+  app.use(function (req, res, next) {
+    res.status(404).redirect(`http://localhost:${NODE_PORT}?p=${req.originalUrl}`)
+    next()
+  })
+  app.listen(NODE_PORT)
+}
+
 
 
 module.exports = {
@@ -85,6 +101,3 @@ module.exports = {
 }
 
 
-// local server
-app.use(express.static(__dirname))
-app.listen(NODE_PORT)
