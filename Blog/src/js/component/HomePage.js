@@ -30,7 +30,7 @@ export default class HomePage extends Component {
               <Grid item md={5} sm={5} xs={11}>
                 <NewestColumn />
               </Grid>
-              <Grid item md={1} sm={1} xs={1}/>
+              <Grid item md={1} sm={1} xs={12}/>
               <Grid item md={3} sm={4} xs={11}>
                 <Catalog />
               </Grid>

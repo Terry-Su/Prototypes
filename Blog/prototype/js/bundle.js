@@ -62919,7 +62919,7 @@ var HomePage = function (_Component) {
               { item: true, md: 5, sm: 5, xs: 11 },
               _react2.default.createElement(_NewestColumn2.default, null)
             ),
-            _react2.default.createElement(_Grid2.default, { item: true, md: 1, sm: 1, xs: 1 }),
+            _react2.default.createElement(_Grid2.default, { item: true, md: 1, sm: 1, xs: 12 }),
             _react2.default.createElement(
               _Grid2.default,
               { item: true, md: 3, sm: 4, xs: 11 },
@@ -72321,7 +72321,7 @@ var getCustomTheme = function getCustomTheme(primary, secondary) {
       activeColor: secondary[700],
       activeBackgroundColor: isSimple ? secondary[50] : secondary[100],
       backgroundColor: isSimple ? _colors.grey[0] : primary[50],
-      borderColor: isSimple ? _colors.grey[300] : _colors.grey[300],
+      borderColor: isSimple ? _colors.grey[300] : _colors.grey[400],
       color: _colors.grey[800],
       hoverColor: primary[isSimple ? 0 : 50]
     },
@@ -72340,7 +72340,7 @@ var getCustomTheme = function getCustomTheme(primary, secondary) {
       color: _colors.grey[900],
       titleColor: _colors.grey[1000],
       timeColor: _colors.grey[700],
-      lineColor: isSimple ? _colors.grey[300] : _colors.grey[300]
+      lineColor: isSimple ? _colors.grey[300] : _colors.grey[400]
     },
 
     tag: {

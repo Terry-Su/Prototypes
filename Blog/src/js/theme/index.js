@@ -32,7 +32,7 @@ const getCustomTheme = (primary, secondary) => {
       activeColor: secondary[700],
       activeBackgroundColor: isSimple ? secondary[50] : secondary[100],
       backgroundColor: isSimple ? grey[0] : primary[50],
-      borderColor: isSimple ? grey[300] : grey[300],
+      borderColor: isSimple ? grey[300] : grey[400],
       color: grey[800],
       hoverColor: primary[
         isSimple ? 0 : 50
@@ -55,7 +55,7 @@ const getCustomTheme = (primary, secondary) => {
       color: grey[900],
       titleColor: grey[1000],
       timeColor: grey[700],
-      lineColor: isSimple ? grey[300] : grey[300]      
+      lineColor: isSimple ? grey[300] : grey[400]      
     },
     
     tag: {
