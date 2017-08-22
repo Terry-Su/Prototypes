@@ -1,9 +1,7 @@
 import React from 'react'
-import {
-  Col,
-  Row,
-  Layout,
-} from 'antd'
+
+import Grid from 'material-ui/Grid'
+import Paper from 'material-ui/Paper'
 
 import Breadcrumb from './Breadcrumb'
 import Catalog from './Catalog'
@@ -12,38 +10,37 @@ import AboutMe from './AboutMe'
 import Copyright from './Copyright'
 
 
-const {
-  Header
-} = Layout
-
-
 
 export default function ListPage() {
   return (
     <div>
-      <br />
-      <Row type='flex' justify='center'>
-        <Col xs={1} sm={1} />
-        <Col xs={23} sm={23}>
-          <Breadcrumb />
-        </Col>
-      </Row>
-      <br /><br />
-      <Row type="flex" justify={'center'}>
-        <Col xs={0} sm={1}/>
-        <Col xs={23} sm={6}>
-          <br />
-          <Catalog />
-        </Col>
-        <Col xs={0} sm={1}></Col>
-        <Col xs={23} sm={12}>
-          <ListBox />
-        </Col>
-        <Col xs={1} sm={1}/>
-      </Row>
 
-      <br /><br /><br />
+      <Paper style={{
+        padding: '1em 0 1em 2em'
+      }}>
+        <Breadcrumb />
+      </Paper>
+
+      <div
+        style={{
+          padding: '2em 0 0 0'
+        }}
+        children={
+          <Grid container justify='center'>
+            <Grid item md={3} sm={3} xs={11}>
+              <Catalog />
+            </Grid>
+            <Grid item md={1} sm={1} />
+            <Grid item md={6} sm={7} xs={11}>
+              <ListBox />
+            </Grid>
+          </Grid>
+        }
+      />
+
+
       <AboutMe />
+
       <Copyright />
     </div>
   )

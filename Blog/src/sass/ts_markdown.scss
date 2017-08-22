@@ -490,7 +490,7 @@ body {
 
     ul,
     ol {
-      padding-left: 2em;
+      padding-left: 1.5em;
     }
 
     ul ul,
@@ -664,4 +664,13 @@ body {
     hr {
       border-bottom-color: #eee;
     }
+}
+
+.highlight {
+  ul {
+    list-style: circle;
+  }
+  ol {
+    list-style: decimal;
+  }
 }

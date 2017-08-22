@@ -1,51 +1,34 @@
 export default `
 <h1>Introduction</h1>
-<p>Do you prefer the usage of &quot;ES6 Promise&quot;? If you do, you will like the usage of &quot;Fetch&quot; too.<br>
-Compared to &quot;Ajax&quot;, &quot;Fetch&quot; owns a competitive feature: promise, which synchronize asynchronous methods elegantly, the meaning and the usage of &quot;Fetch&quot;  can be understood easily as well.<br>
-Here, I'd like to list the most common usage of &quot;Fetch&quot;.</p>
-<h1>Flow</h1>
-<p>The flow of fetching staff is simple:
-image1</p>
-<h1>Usage</h1>
-<h2>Fetch once</h2>
-<p>Suppose we would fetch the content of an remote html</p>
-<pre><code class="language-js">fetch(<span class="hljs-string">'./data/test.html'</span>)
-	.then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">response</span>) </span>{
-		<span class="hljs-keyword">return</span> response.text()    <span class="hljs-comment">// return a promise </span>
-	})
-	.then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">body</span>) </span>{
-		<span class="hljs-built_in">console</span>.log( body )    <span class="hljs-comment">// log: html content</span>
-	})
-</code></pre>
-<h2>Fetch data right after the other data fetched(Chain)</h2>
-<p>If we'd like to fetch data(json) right after fetching content(html)</p>
-<pre><code class="language-js">fetch(<span class="hljs-string">'./data/test.html'</span>)
-	.then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
-		<span class="hljs-keyword">return</span> response.text()
-	})
-	.then(<span class="hljs-function"><span class="hljs-params">body</span> =&gt;</span> {
-		<span class="hljs-built_in">console</span>.log(body)
-		<span class="hljs-keyword">return</span> fetch(<span class="hljs-string">'./data/test.json'</span>)  <span class="hljs-comment">// return a promise(fetch('/url') will return a promise ) </span>
-	})
-	.then(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
-		<span class="hljs-keyword">return</span> response.json()  <span class="hljs-comment">// return a promise too</span>
-	})
-	.then(<span class="hljs-function"><span class="hljs-params">json</span> =&gt;</span> {
-		<span class="hljs-built_in">console</span>.log(json)  <span class="hljs-comment">// log: json's data</span>
-	})
-</code></pre>
-<h2>Complete all fetching action</h2>
-<pre><code class="language-js"><span class="hljs-built_in">Promise</span>.all([
-	<span class="hljs-built_in">Promise</span>.resolve(fetch(<span class="hljs-string">'./data/test.html'</span>)),
-	<span class="hljs-built_in">Promise</span>.resolve(fetch(<span class="hljs-string">'./data/test.json'</span>))
-]).then(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> {
-	<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Two requests are both completed!'</span>)
-})
-</code></pre>
-<h1>API</h1>
-<p><a href="https://github.github.io/fetch/">Github Fetch Document</a><br>
-<a href="https://fetch.spec.whatwg.org/">Offcial Manual</a></p>
-<h1>Conclusion</h1>
-<p>Fetch, well done!</p>
-
+<p>MVVC is a light multi-page web developing framework.<br>
+Github: <a href="https://github.com/Terry-Su/MVVC">https://github.com/Terry-Su/MVVC</a></p>
+<h1>Background</h1>
+<ol>
+<li>In practical developing environment, react is too heavy to create an simple web page</li>
+<li>An project always contains mutiple web pages, instead of an single page which react's good at</li>
+<li>React and redux are the one of most popular and welcoming web developing mode</li>
+</ol>
+<h1>Concept</h1>
+<h2><strong>M</strong>: Model</h2>
+<p>Use fetch</p>
+<h2><strong>VV</strong>: View and view model</h2>
+<p>Use <a href="https://infernojs.org/">inferno</a>(a light react framwork) and redux</p>
+<h2><strong>C</strong>: Controller</h2>
+<p>Multiple pages can share or inherit props and methods by contollers</p>
+<h2>Features</h2>
+<h3>Light react</h3>
+<p>Using <code>inferno</code> instead of react can reduce a large amount of  size of <code>bundle.js</code></p>
+<h3>Supports multiple projects and pages</h3>
+<p>We can choose one page or all pages in one project, or even all pages of all projects to develop</p>
+<h3>Inferno + Redux</h3>
+<p>A robust coing mode in web development</p>
+<h1>Getting started</h1>
+<p>First, just <code>git clone</code> the MVVC to local<br>
+Then, install dev dependencies:<br>
+<code>npm install</code><br>
+Start and view the demo on <a href="http://localhost:3000/projectExample/pageExample">http://localhost:3000/projectExample/pageExample</a>:<br>
+<code>npm start</code></p>
+<h1>Contributing</h1>
+<p>If you found somewhere in codes to be improved or fixed, or just make a suggestion, don't hesitate to send a pull request!</p>
+<div id="detailCatalogData" style="display:none;">[{"name":"Introduction"},{"name":"Background"},{"name":"Concept","h2":["M: Model","VV: View and view model","C: Controller","Features"]},{"name":"Getting started"}]</div>
 `

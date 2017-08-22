@@ -1,25 +1,36 @@
 import React from 'react'
-import {
-  Col,
-  Row
-} from 'antd'
+
+import Grid from 'material-ui/Grid'
+
 import DetailBoxContent from './DetailBoxContent'
 import DetailBoxInfo from './DetailBoxInfo'
 
 export default function DetailBox() {
   return (
     <div id="detail">
-      <h1 id='blog_title' style={{
-        textAlign: 'center'
-      }}>The title of blog</h1>
-      <br />
+      <h1
+        id='blog_title'
+        style={{
+          textAlign: 'center',
+          padding: '1em 0 0.5em 0'
+        }}
+        children={
+          'The title of blog'
+        }
+      />
+
       <DetailBoxContent />
-      <br />
-      <Row type='flex' justify='center'>
-        <Col xs={23} sm={23}>
+
+      <div 
+        style={{
+          padding: '2em 0 0 0'
+        }}
+        children={
           <DetailBoxInfo />
-        </Col>
-      </Row>
+        }
+      />
+      
+
 
     </div>
   )

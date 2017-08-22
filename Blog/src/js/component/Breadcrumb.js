@@ -1,17 +1,29 @@
 import React from 'react'
 
-import { Breadcrumb as AntdBreadcrumb } from 'antd';
+import Grid from 'material-ui/Grid'
+import Typography from 'material-ui/Typography'
+import { withTheme } from 'material-ui/styles'
 
 
-
-export default function Breadcrumb() {
+export default withTheme(Breadcrumb)
+function Breadcrumb() {
   return (
     <div>
-      <AntdBreadcrumb>
-        <AntdBreadcrumb.Item>主页</AntdBreadcrumb.Item>
-        <AntdBreadcrumb.Item><a href="">目录1</a></AntdBreadcrumb.Item>
-        <AntdBreadcrumb.Item><a href="">博客标题</a></AntdBreadcrumb.Item>
-      </AntdBreadcrumb>
+      <Grid container>
+        <Grid item md={12}>
+          <Typography style={{
+            display: 'inline-block'
+          }} type='body2'>Home</Typography>
+          <Typography style={{
+            display: 'inline-block'
+          }} type='caption'>&nbsp;&nbsp;/&nbsp;&nbsp;</Typography>
+          <Typography style={{
+            display: 'inline-block'
+          }} type='body2'>
+            <b>List</b>
+          </Typography>
+        </Grid>
+      </Grid>
     </div>
   )
 }

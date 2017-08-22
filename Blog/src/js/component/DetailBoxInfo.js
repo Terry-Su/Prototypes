@@ -1,8 +1,6 @@
 import React from 'react'
-import {
-  Tag
-} from 'antd'
 
+import Tags from './Tags'
 
 export default function DetailBoxInfo() {
   return (
@@ -15,16 +13,7 @@ export default function DetailBoxInfo() {
         padding: '5px 0 5px 0'
       }}>
         {
-          [...'123'].map((v, i) => {
-            return <span style={{
-              textAlign: 'right',
-              display: 'inline-block',
-            }} key={i}>
-              <Tag color="#108ee9">
-                标签{v}
-              </Tag>
-            </span>
-          })
+          <Tags />
         }
       </div>
 

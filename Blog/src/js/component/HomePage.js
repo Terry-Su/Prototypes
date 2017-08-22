@@ -1,48 +1,54 @@
-import React from 'react'
-import {
-  Col,
-  Row,
-  Layout,
-} from 'antd'
+import React, { Component } from 'react'
+import Grid from 'material-ui/Grid'
 
 import Catalog from './Catalog'
 import NewestColumn from './NewestColumn'
 import Notion from './Notion'
-import Detail from './Detail'
 import AboutMe from './AboutMe'
 import Copyright from './Copyright'
-import UITest from './UITest'
 
 
-const {
-  Content
-} = Layout
+export default class HomePage extends Component {
+  render() {
+    return (
+      <div>
+        <div
+          style={{
+            padding: '1em 0 3em 0'
+          }}
+          children={
+            <Notion />
+          }
+        />
 
+        <div
+          style={{
+            padding: '2em 0 0 0'
+          }}
+          children={
+            <Grid container justify='center' spacing={40}>
+              <Grid item md={5} sm={5} xs={11}>
+                <NewestColumn />
+              </Grid>
+              <Grid item md={1} sm={1} xs={1}/>
+              <Grid item md={3} sm={4} xs={11}>
+                <Catalog />
+              </Grid>
+            </Grid>
+          }
+        />
 
-export default function HomePage() {
-  return (
-    <div>
-      {/* <UITest /> */}
-      <br />
-      <Notion />
-      <br /><br /><br />
-      <Content>
-        <Row type="flex" gutter={1} justify={'center'}>
-          <Col xs={0} sm={1}/>
-          <Col xs={20} sm={8}>
-            <NewestColumn />
-          </Col>
-          <Col xs={0} sm={2}/>
-          <Col xs={20} sm={6}>
-            <br />
-            <Catalog />
-          </Col>
-          <Col xs={0} sm={1}/>
-        </Row>
-      </Content>
-      <br /><br /><br />
-      <AboutMe />
-      <Copyright />
-    </div>
-  )
+        <div
+          style={{
+            padding: '3em 0 0 0'
+          }}
+          children={
+            <AboutMe />
+          }
+        />
+
+        <Copyright />
+      </div>
+    )
+  }
 }

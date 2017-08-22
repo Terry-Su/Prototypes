@@ -1,16 +1,11 @@
 import React from 'react'
-import {
-  Layout
-} from 'antd'
 
-const {
-  Header
-} = Layout
+import Paper from 'material-ui/Paper'
 
 export default function Notion() {
   return (
     <div>
-      <Header style={{
+      <Paper style={{
         backgroundColor: 'white'
       }}>
         <h1 style={{
@@ -18,7 +13,7 @@ export default function Notion() {
         }}>
           Terry Su 的博客
         </h1>
-      </Header>
+      </Paper>
     </div>
   )
 }
