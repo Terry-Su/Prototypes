@@ -6,7 +6,8 @@ export default function Notion() {
   return (
     <div>
       <Paper style={{
-        backgroundColor: 'white'
+        background: 'none',
+        padding: '1em 0 0 3em'
       }}>
         <h1 style={{
           color: 'black'

@@ -14441,8 +14441,11 @@ function Copyright() {
   return _react2.default.createElement(
     _Paper2.default,
     { id: 'copyright', style: {
+        background: 'none',
         textAlign: 'center',
-        padding: '5px'
+        padding: '5px',
+        fontSize: '12px',
+        color: '#666'
       } },
     'Copyright \xA9 2017 TERRY SU ALL RIGHTS RESERVED'
   );
@@ -19373,6 +19376,14 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Grid = __webpack_require__(700);
+
+var _Grid2 = _interopRequireDefault(_Grid);
+
+var _Avatar = __webpack_require__(1637);
+
+var _Avatar2 = _interopRequireDefault(_Avatar);
+
 var _Tags = __webpack_require__(695);
 
 var _Tags2 = _interopRequireDefault(_Tags);
@@ -19380,29 +19391,20 @@ var _Tags2 = _interopRequireDefault(_Tags);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function AboutMe() {
-  return _react2.default.createElement(
-    'div',
-    { style: {
-        padding: '150px 0 0 0',
-        textAlign: 'center',
-        fontSize: '12px'
-      } },
-    _react2.default.createElement(
-      'a',
-      { style: {
-          color: '#666'
-        } },
-      'mail@mail.com'
-    ),
-    '\xA0 | \xA0',
-    _react2.default.createElement(
-      'a',
-      { style: {
-          color: '#666'
-        } },
-      'Github'
-    )
-  );
+  return _react2.default.createElement(_Grid2.default, {
+    container: true,
+    justify: 'center',
+    style: {
+      paddingTop: '5em'
+    },
+    children: _react2.default.createElement(_Grid2.default, {
+      item: true,
+      children: _react2.default.createElement('img', {
+        src: './images/gb-icon.png',
+        width: '30'
+      })
+    })
+  });
 }
 
 /***/ }),
@@ -38948,7 +38950,6 @@ module.exports = freeGlobal;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Catalog;
 
 var _react = __webpack_require__(1);
 
@@ -38966,6 +38967,8 @@ var _Button = __webpack_require__(1613);
 
 var _Button2 = _interopRequireDefault(_Button);
 
+var _styles = __webpack_require__(150);
+
 var _Tags = __webpack_require__(695);
 
 var _Tags2 = _interopRequireDefault(_Tags);
@@ -38974,32 +38977,46 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-function Catalog() {
+exports.default = (0, _styles.withTheme)(Catalog);
+
+function Catalog(_ref) {
+  var theme = _ref.theme;
+
   return _react2.default.createElement(
     'div',
     { style: {
-        border: '1px solid #ddd',
+        border: '1px solid ' + theme.catalog.borderColor,
         borderRadius: '10px',
-        padding: '10px'
+        padding: '10px',
+        backgroundColor: theme.catalog.backgroundColor
       } },
     _react2.default.createElement(
       _Paper2.default,
-      null,
+      { style: {
+          backgroundColor: theme.catalog.backgroundColor
+        } },
       _react2.default.createElement(
         _List2.default,
         null,
         _react2.default.createElement(
           _List.ListItem,
           { button: true, disableRipple: true, style: {
-              background: '#ecf6fd',
-              color: '#108ee9'
+              backgroundColor: theme.catalog.activeBackgroundColor,
+              color: theme.catalog.activeColor
             } },
           '\u76EE\u5F551'
         ),
         [].concat(_toConsumableArray('12345')).map(function (v, i) {
           return _react2.default.createElement(
             _List.ListItem,
-            { key: i, button: true, disableRipple: true },
+            {
+              key: i,
+              button: true,
+              disableRipple: true,
+              style: {
+                color: theme.catalog.color
+              }
+            },
             '\u76EE\u5F55',
             i + 2
           );
@@ -39628,7 +39645,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = (0, _styles.withTheme)(Breadcrumb);
 
-function Breadcrumb() {
+function Breadcrumb(_ref) {
+  var theme = _ref.theme;
+
   return _react2.default.createElement(
     'div',
     null,
@@ -39641,7 +39660,8 @@ function Breadcrumb() {
         _react2.default.createElement(
           _Typography2.default,
           { style: {
-              display: 'inline-block'
+              display: 'inline-block',
+              color: theme.breadcrumb.color
             }, type: 'body2' },
           'Home'
         ),
@@ -39655,7 +39675,8 @@ function Breadcrumb() {
         _react2.default.createElement(
           _Typography2.default,
           { style: {
-              display: 'inline-block'
+              display: 'inline-block',
+              color: theme.breadcrumb.color
             }, type: 'body2' },
           _react2.default.createElement(
             'b',
@@ -39764,7 +39785,7 @@ exports = module.exports = __webpack_require__(165)();
 
 
 // module
-exports.push([module.i, "html, body {\n  width: 100%;\n  height: 100%;\n  overflow-x: hidden; }\n\nhtml {\n  font-size: 100%;\n  -webkit-text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%; }\n\nbody {\n  color: #444;\n  font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;\n  font-size: 16px;\n  line-height: 1.5em;\n  padding: 1em;\n  margin: auto;\n  background: #fefefe; }\n  body #blog_title {\n    font-size: 32px;\n    font-weight: 300; }\n", ""]);
+exports.push([module.i, "html, body {\n  width: 100%;\n  height: 100%;\n  overflow-x: hidden; }\n\nhtml {\n  font-size: 100%;\n  -webkit-text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%; }\n\nbody {\n  color: #444;\n  font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;\n  font-size: 16px;\n  line-height: 1.5em;\n  margin: auto;\n  background: #fefefe; }\n  body #blog_title {\n    font-size: 32px;\n    font-weight: 300; }\n  body #detail {\n    max-width: 700px;\n    margin: 0 auto; }\n", ""]);
 
 // exports
 
@@ -45251,9 +45272,13 @@ resolveUrl();
 
 function resolveUrl() {
   var Url = new URL(window.location.href);
-  var param = Url.searchParams.get('p');
-  if (param) {
-    _reactRouter.browserHistory.push(param);
+  var searchParams = Url.searchParams;
+
+  if (searchParams) {
+    var param = Url.searchParams.get('p');
+    if (param) {
+      _reactRouter.browserHistory.push(param);
+    }
   }
 }
 
@@ -58334,19 +58359,17 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
 var _reactRouter = __webpack_require__(415);
 
-var _theme = __webpack_require__(193);
-
-var _theme2 = _interopRequireDefault(_theme);
-
 var _styles = __webpack_require__(150);
+
+var _index = __webpack_require__(1670);
+
+var _index2 = _interopRequireDefault(_index);
 
 var _HomePage = __webpack_require__(1133);
 
@@ -58370,55 +58393,18 @@ var _UnitTest2 = _interopRequireDefault(_UnitTest);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var defaultTheme = (0, _theme2.default)();
-var customStyle = {
-  tag: {
-    color: '108ee9',
-    activeColor: '#fff',
-    activeBackgroundColor: '#108ee9',
-    backgroundColor: '#d2eafb'
-  }
-};
-var theme = (0, _theme2.default)(_extends({}, defaultTheme, {
-  shadows: ["none"],
-  typography: _extends({}, defaultTheme.typography, {
-    fontFamily: 'Georgia, Palatino, \'Palatino Linotype\', Times, \'Times New Roman\', serif',
-    title: _extends({}, defaultTheme.typography.title, {
-      fontFamily: 'Georgia, Palatino, \'Palatino Linotype\', Times, \'Times New Roman\', serif'
-    }),
-    caption: _extends({}, defaultTheme.typography.caption, {
-      fontFamily: 'Georgia, Palatino, \'Palatino Linotype\', Times, \'Times New Roman\', serif'
-    }),
-    headline: _extends({}, defaultTheme.typography.headline, {
-      fontFamily: 'Georgia, Palatino, \'Palatino Linotype\', Times, \'Times New Roman\', serif'
-    }),
-    body1: _extends({}, defaultTheme.typography.body1, {
-      fontFamily: 'Georgia, Palatino, \'Palatino Linotype\', Times, \'Times New Roman\', serif'
-    }),
-    body2: _extends({}, defaultTheme.typography.body2, {
-      fontFamily: 'Georgia, Palatino, \'Palatino Linotype\', Times, \'Times New Roman\', serif'
-    }),
-    button: _extends({}, defaultTheme.typography.button, {
-      fontFamily: 'Georgia, Palatino, \'Palatino Linotype\', Times, \'Times New Roman\', serif'
-    })
-  }),
-  palette: _extends({}, defaultTheme.palette, {
-    text: _extends({}, defaultTheme.palette.text, {
-      divider: "#ecf6fd"
-    })
-  })
-}, customStyle));
-
 exports.default = Blog;
 
 
 function Blog() {
   return _react2.default.createElement(
     _styles.MuiThemeProvider,
-    { theme: theme },
+    { theme: _index2.default },
     _react2.default.createElement(
       'div',
-      null,
+      { style: {
+          backgroundColor: _index2.default.backgroundColor
+        } },
       _react2.default.createElement(
         _reactRouter.Router,
         { history: _reactRouter.browserHistory },
@@ -62923,7 +62909,7 @@ var HomePage = function (_Component) {
         }),
         _react2.default.createElement('div', {
           style: {
-            padding: '2em 0 0 0'
+            padding: '1em 0 0 0'
           },
           children: _react2.default.createElement(
             _Grid2.default,
@@ -68047,31 +68033,39 @@ var _List = __webpack_require__(692);
 
 var _List2 = _interopRequireDefault(_List);
 
+var _styles = __webpack_require__(150);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-exports.default = NewestColumn;
+exports.default = (0, _styles.withTheme)(NewestColumn);
 
 
-function NewestColumn() {
+function NewestColumn(_ref) {
+  var theme = _ref.theme;
+
   return _react2.default.createElement(
     'div',
     null,
     _react2.default.createElement(
       _Paper2.default,
-      null,
+      { style: {
+          background: 'none'
+        } },
       _react2.default.createElement(
         'div',
         {
           style: {
             textAlign: 'center',
-            padding: '0 0 1em 0',
-            borderBottom: '1px solid #ccc'
+            padding: '1em 0 1em 0',
+            borderBottom: '1px solid ' + theme.newestColumn.lineColor
           } },
         _react2.default.createElement(
           _Typography2.default,
-          { type: 'title' },
+          { type: 'title', style: {
+              color: theme.newestColumn.titleColor
+            } },
           'The newest'
         )
       ),
@@ -68096,14 +68090,16 @@ function NewestColumn() {
                     _Grid2.default,
                     { item: true, md: 4, style: {
                         textAlign: 'center',
-                        color: '#666'
+                        color: theme.newestColumn.timeColor
                       } },
                     '2017/08/21'
                   )
                 ),
                 _react2.default.createElement(
                   _Grid2.default,
-                  { item: true, md: 8, sm: 12 },
+                  { item: true, md: 8, sm: 12, style: {
+                      color: theme.newestColumn.color
+                    } },
                   '\u535A\u5BA2\u7684\u6807\u9898',
                   Math.pow(i + 1, 10)
                 )
@@ -69413,7 +69409,8 @@ function Notion() {
     _react2.default.createElement(
       _Paper2.default,
       { style: {
-          backgroundColor: 'white'
+          background: 'none',
+          padding: '1em 0 0 3em'
         } },
       _react2.default.createElement(
         'h1',
@@ -69645,6 +69642,7 @@ function ListPage() {
     _react2.default.createElement(
       _Paper2.default,
       { style: {
+          background: 'none',
           padding: '1em 0 1em 2em'
         } },
       _react2.default.createElement(_Breadcrumb2.default, null)
@@ -69684,11 +69682,12 @@ function ListPage() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = ListBox;
 
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _styles = __webpack_require__(150);
 
 var _ListBoxItem = __webpack_require__(1642);
 
@@ -69698,7 +69697,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-function ListBox() {
+exports.default = (0, _styles.withTheme)(ListBox);
+
+
+function ListBox(_ref) {
+  var theme = _ref.theme;
+
   return _react2.default.createElement(
     'div',
     null,
@@ -69724,7 +69728,6 @@ function ListBox() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = ListBoxItem;
 
 var _react = __webpack_require__(1);
 
@@ -69738,22 +69741,34 @@ var _Typography = __webpack_require__(343);
 
 var _Typography2 = _interopRequireDefault(_Typography);
 
+var _styles = __webpack_require__(150);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function ListBoxItem() {
+exports.default = (0, _styles.withTheme)(ListBoxItem);
+
+
+function ListBoxItem(_ref) {
+  var theme = _ref.theme;
+
   return _react2.default.createElement(
     _Paper2.default,
-    null,
+    { style: {
+        background: 'none'
+      } },
     _react2.default.createElement(
       _Typography2.default,
       { type: 'headline', component: 'h3', style: {
-          padding: '10px 0'
+          padding: '10px 0',
+          color: theme.listBox.titleColor
         } },
       '\u535A\u5BA2\u7684\u6807\u9898'
     ),
     _react2.default.createElement(
       _Typography2.default,
-      { type: 'caption', component: 'p' },
+      { type: 'caption', component: 'p', style: {
+          color: theme.listBox.color
+        } },
       'INTRODUCTION\\nDo you prefer the usage of \\"ES6 Promise\\"? If you do, you will like the usage of\\n\\"Fetch\\"...'
     )
   );
@@ -69842,6 +69857,7 @@ var DetailPage = function (_Component) {
         _react2.default.createElement(
           _Paper2.default,
           { style: {
+              background: 'none',
               padding: '1em 0 1em 2em'
             } },
           _react2.default.createElement(_Breadcrumb2.default, null)
@@ -69859,25 +69875,22 @@ var DetailPage = function (_Component) {
               },
               children: _react2.default.createElement(_CommentBox2.default, null)
             })
-          ),
-          _react2.default.createElement(
-            _Hidden2.default,
-            { only: ['sm', 'xs'] },
+          )
+        ),
+        _react2.default.createElement('div', {
+          style: {
+            padding: '1em 0 0 0 '
+          },
+          children: _react2.default.createElement(
+            _Grid2.default,
+            { container: true, justify: 'center' },
             _react2.default.createElement(
               _Grid2.default,
               { item: true },
-              _react2.default.createElement(
-                'div',
-                { style: {
-                    position: 'fixed',
-                    top: '5px',
-                    padding: '2em 0 0 1.8em'
-                  } },
-                _react2.default.createElement(_DetailCatalog2.default, null)
-              )
+              _react2.default.createElement(_BackToTop2.default, null)
             )
           )
-        ),
+        }),
         _react2.default.createElement(_AboutMe2.default, null),
         _react2.default.createElement(_Copyright2.default, null)
       );
@@ -70068,13 +70081,11 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Avatar = __webpack_require__(1637);
+var _Button = __webpack_require__(1613);
 
-var _Avatar2 = _interopRequireDefault(_Avatar);
+var _Button2 = _interopRequireDefault(_Button);
 
-var _Folder = __webpack_require__(1669);
-
-var _Folder2 = _interopRequireDefault(_Folder);
+var _styles = __webpack_require__(150);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -70096,15 +70107,25 @@ var BackToTop = function (_React$Component) {
   _createClass(BackToTop, [{
     key: 'render',
     value: function render() {
+      var theme = this.props.theme;
+
+
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_Avatar2.default, {
+        _react2.default.createElement(_Button2.default, {
+          disableRipple: true,
           style: {
-            color: 'white',
-            background: '#50aef2'
+            color: theme.backToTop.color,
+            background: 'none',
+            padding: '1em'
+
           },
-          children: _react2.default.createElement(_Folder2.default, null)
+          children: _react2.default.createElement(
+            'a',
+            null,
+            'Back To Top'
+          )
         })
       );
     }
@@ -70113,7 +70134,7 @@ var BackToTop = function (_React$Component) {
   return BackToTop;
 }(_react2.default.Component);
 
-exports.default = BackToTop;
+exports.default = (0, _styles.withTheme)(BackToTop);
 
 /***/ }),
 /* 1649 */
@@ -70277,23 +70298,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var styles = function styles(theme) {
-  return {
-    common: {
-      fontSize: '14px'
-    },
-    container: {
-      // borderLeft: '1px solid #ddd',
-      // borderRadius: '10px',
-      padding: '10px'
-    },
-    h1: {},
-    h2: {
-      paddingLeft: '1em'
-    }
-  };
-};
-
 var DetailCatalog = function (_Component) {
   _inherits(DetailCatalog, _Component);
 
@@ -70306,32 +70310,43 @@ var DetailCatalog = function (_Component) {
   _createClass(DetailCatalog, [{
     key: 'render',
     value: function render() {
-      var classes = this.props.classes;
+      var theme = this.props.theme;
 
 
       return _react2.default.createElement(
         'div',
-        { id: 'detailCatalog', className: classes.common + ' ' + classes.container },
+        { id: 'detailCatalog', style: {
+            padding: '2em'
+          } },
         [].concat(_toConsumableArray('123')).map(function (v, i) {
           return _react2.default.createElement(
             'div',
             { key: i },
             _react2.default.createElement(
-              'h1',
-              { className: classes.common + ' ' + classes.h1 },
+              'div',
+              { style: {
+                  fontSize: '14px',
+                  padding: '0.8em 0 0 0',
+                  color: theme.detailCatalog.titleColor
+                } },
               _react2.default.createElement(
                 'b',
                 null,
-                'Title',
-                i
+                'TitleTitleTitleTitleTitle',
+                i + 1,
+                '...'
               )
             ),
             [].concat(_toConsumableArray('123')).map(function (v, i) {
               return _react2.default.createElement(
                 'h2',
-                { key: i, className: classes.common + ' ' + classes.h2 },
+                { key: i, style: {
+                    fontSize: '14px',
+                    padding: '0.2em 0 0 1em',
+                    color: theme.detailCatalog.color
+                  } },
                 'SubTitle',
-                i
+                i + 1
               );
             })
           );
@@ -70343,7 +70358,7 @@ var DetailCatalog = function (_Component) {
   return DetailCatalog;
 }(_react.Component);
 
-exports.default = (0, _styles.withStyles)(styles)(DetailCatalog);
+exports.default = (0, _styles.withTheme)(DetailCatalog);
 
 /***/ }),
 /* 1653 */
@@ -70361,6 +70376,8 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _styles = __webpack_require__(150);
 
 var _Comment = __webpack_require__(1654);
 
@@ -70388,13 +70405,16 @@ var CommentBox = function (_Component) {
   _createClass(CommentBox, [{
     key: 'render',
     value: function render() {
+      var theme = this.props.theme;
+
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(
           'h3',
           { style: {
-              paddingBottom: '1em'
+              paddingBottom: '1em',
+              fontSize: '16px'
             } },
           'Want to leave a comment? Visit ',
           _react2.default.createElement(
@@ -70408,10 +70428,7 @@ var CommentBox = function (_Component) {
           return _react2.default.createElement(
             'div',
             { key: i, style: {
-                padding: '0 0 0.5em 0',
-                margin: '0 0 2em 0',
-                border: '1px solid #dfdfdf',
-                borderRadius: '5px'
+                margin: '0 0 2em 0'
               } },
             _react2.default.createElement(_Comment2.default, { key: i })
           );
@@ -70423,7 +70440,7 @@ var CommentBox = function (_Component) {
   return CommentBox;
 }(_react.Component);
 
-exports.default = CommentBox;
+exports.default = (0, _styles.withTheme)(CommentBox);
 
 /***/ }),
 /* 1654 */
@@ -70450,10 +70467,6 @@ var _marked = __webpack_require__(1655);
 
 var _marked2 = _interopRequireDefault(_marked);
 
-var _commentContent = __webpack_require__(1656);
-
-var _commentContent2 = _interopRequireDefault(_commentContent);
-
 var _Card = __webpack_require__(1658);
 
 var _Card2 = _interopRequireDefault(_Card);
@@ -70461,6 +70474,12 @@ var _Card2 = _interopRequireDefault(_Card);
 var _Avatar = __webpack_require__(1637);
 
 var _Avatar2 = _interopRequireDefault(_Avatar);
+
+var _styles = __webpack_require__(150);
+
+var _commentContent = __webpack_require__(1656);
+
+var _commentContent2 = _interopRequireDefault(_commentContent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -70482,12 +70501,21 @@ var Comment = function (_Component) {
   _createClass(Comment, [{
     key: 'render',
     value: function render() {
+      var theme = this.props.theme;
+
+
       return _react2.default.createElement(
         'div',
-        null,
+        { style: {
+            padding: '0 0 0.5em 0',
+            border: '1px solid ' + theme.comment.borderColor,
+            borderRadius: '5px'
+          } },
         _react2.default.createElement(
           _Card2.default,
-          null,
+          { style: {
+              background: 'none'
+            } },
           _react2.default.createElement(_Card.CardHeader, {
             avatar: _react2.default.createElement(_Avatar2.default, { src: 'https://avatars2.githubusercontent.com/u/23733477?v=4' }),
             title: 'UserName',
@@ -70509,7 +70537,7 @@ var Comment = function (_Component) {
   return Comment;
 }(_react.Component);
 
-exports.default = Comment;
+exports.default = (0, _styles.withTheme)(Comment);
 
 /***/ }),
 /* 1655 */
@@ -72211,6 +72239,10 @@ var _Catalog = __webpack_require__(690);
 
 var _Catalog2 = _interopRequireDefault(_Catalog);
 
+var _AboutMe = __webpack_require__(344);
+
+var _AboutMe2 = _interopRequireDefault(_AboutMe);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -72234,7 +72266,7 @@ var UnitTest = function (_Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(_Catalog2.default, null)
+        _react2.default.createElement(_AboutMe2.default, null)
       );
     }
   }]);
@@ -72250,7 +72282,8 @@ exports.default = UnitTest;
 /* 1666 */,
 /* 1667 */,
 /* 1668 */,
-/* 1669 */
+/* 1669 */,
+/* 1670 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -72260,34 +72293,816 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(1);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _react2 = _interopRequireDefault(_react);
+var _theme = __webpack_require__(193);
 
-var _pure = __webpack_require__(697);
+var _theme2 = _interopRequireDefault(_theme);
 
-var _pure2 = _interopRequireDefault(_pure);
-
-var _SvgIcon = __webpack_require__(699);
-
-var _SvgIcon2 = _interopRequireDefault(_SvgIcon);
+var _colors = __webpack_require__(1671);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _ref = _react2.default.createElement('path', { d: 'M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z' });
+var getCustomTheme = function getCustomTheme(primary, secondary) {
+  var isSimple = primary === _colors.grey && secondary === _colors.lightBlue;
+  return {
+    color: '#000',
+    backgroundColor: primary[isSimple ? 0 : 50],
+    titleColor: primary[900],
+    subColor: primary[50],
 
-var Folder = function Folder(props) {
-  return _react2.default.createElement(
-    _SvgIcon2.default,
-    props,
-    _ref
-  );
+    backToTop: {
+      color: _colors.grey[900]
+    },
+    breadcrumb: {
+      color: _colors.grey[900]
+    },
+    catalog: {
+      activeColor: secondary[700],
+      activeBackgroundColor: isSimple ? secondary[50] : secondary[100],
+      backgroundColor: isSimple ? _colors.grey[0] : primary[50],
+      borderColor: isSimple ? _colors.grey[300] : _colors.grey[300],
+      color: _colors.grey[800],
+      hoverColor: primary[isSimple ? 0 : 50]
+    },
+    comment: {
+      borderColor: _colors.grey[isSimple ? 300 : 300]
+    },
+    detailCatalog: {
+      color: _colors.grey[700],
+      titleColor: _colors.grey[1000]
+    },
+    listBox: {
+      color: _colors.grey[700],
+      titleColor: _colors.grey[1000]
+    },
+    newestColumn: {
+      color: _colors.grey[900],
+      titleColor: _colors.grey[1000],
+      timeColor: _colors.grey[700],
+      lineColor: isSimple ? _colors.grey[300] : _colors.grey[300]
+    },
+
+    tag: {
+      activeBackgroundColor: secondary[700],
+      activeColor: '#fff',
+      backgroundColor: secondary[isSimple ? 50 : 100],
+      color: secondary[700]
+
+    }
+  };
 };
 
-Folder = (0, _pure2.default)(Folder);
-Folder.muiName = 'SvgIcon';
+var themes = {
+  spring: function spring() {
+    return getCustomTheme(_colors.lightGreen, _colors.green);
+  },
+  summer: function summer() {
+    return getCustomTheme(_colors.lightBlue, _colors.blue);
+  },
+  autumn: function autumn() {
+    return getCustomTheme(_colors.amber, _colors.brown);
+  },
+  winter: function winter() {
+    return getCustomTheme(_colors.grey, _colors.lightBlue);
+  }
+};
 
-exports.default = Folder;
+var customStyle = themes.summer();
+
+// {
+//   background: {
+//     backgroundColor: customThemes.backgroundColor[key]
+//   }
+// tag: {
+//   color: '108ee9',
+//   activeColor: '#fff',
+//   activeBackgroundColor: '#108ee9',
+//   backgroundColor: '#d2eafb',
+// }
+// }
+
+var defaultTheme = (0, _theme2.default)();
+
+var theme = (0, _theme2.default)(_extends({}, defaultTheme, {
+  shadows: ["none"],
+  typography: _extends({}, defaultTheme.typography, {
+    fontFamily: 'Georgia, Palatino, \'Palatino Linotype\', Times, \'Times New Roman\', serif',
+    title: _extends({}, defaultTheme.typography.title, {
+      fontFamily: 'Georgia, Palatino, \'Palatino Linotype\', Times, \'Times New Roman\', serif'
+    }),
+    caption: _extends({}, defaultTheme.typography.caption, {
+      fontFamily: 'Georgia, Palatino, \'Palatino Linotype\', Times, \'Times New Roman\', serif'
+    }),
+    headline: _extends({}, defaultTheme.typography.headline, {
+      fontFamily: 'Georgia, Palatino, \'Palatino Linotype\', Times, \'Times New Roman\', serif'
+    }),
+    body1: _extends({}, defaultTheme.typography.body1, {
+      fontFamily: 'Georgia, Palatino, \'Palatino Linotype\', Times, \'Times New Roman\', serif'
+    }),
+    body2: _extends({}, defaultTheme.typography.body2, {
+      fontFamily: 'Georgia, Palatino, \'Palatino Linotype\', Times, \'Times New Roman\', serif'
+    }),
+    button: _extends({}, defaultTheme.typography.button, {
+      fontFamily: 'Georgia, Palatino, \'Palatino Linotype\', Times, \'Times New Roman\', serif'
+    })
+  }),
+  palette: _extends({}, defaultTheme.palette, {
+    text: _extends({}, defaultTheme.palette.text, {
+      divider: customStyle.catalog.hoverColor
+    })
+  })
+}, customStyle));
+
+exports.default = theme;
+
+/***/ }),
+/* 1671 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _common = __webpack_require__(1050);
+
+Object.defineProperty(exports, 'common', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_common).default;
+  }
+});
+
+var _red = __webpack_require__(1049);
+
+Object.defineProperty(exports, 'red', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_red).default;
+  }
+});
+
+var _pink = __webpack_require__(1048);
+
+Object.defineProperty(exports, 'pink', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_pink).default;
+  }
+});
+
+var _purple = __webpack_require__(1672);
+
+Object.defineProperty(exports, 'purple', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_purple).default;
+  }
+});
+
+var _deepPurple = __webpack_require__(1673);
+
+Object.defineProperty(exports, 'deepPurple', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_deepPurple).default;
+  }
+});
+
+var _indigo = __webpack_require__(1047);
+
+Object.defineProperty(exports, 'indigo', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_indigo).default;
+  }
+});
+
+var _blue = __webpack_require__(1674);
+
+Object.defineProperty(exports, 'blue', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_blue).default;
+  }
+});
+
+var _lightBlue = __webpack_require__(1675);
+
+Object.defineProperty(exports, 'lightBlue', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_lightBlue).default;
+  }
+});
+
+var _cyan = __webpack_require__(1676);
+
+Object.defineProperty(exports, 'cyan', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_cyan).default;
+  }
+});
+
+var _teal = __webpack_require__(1677);
+
+Object.defineProperty(exports, 'teal', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_teal).default;
+  }
+});
+
+var _green = __webpack_require__(1678);
+
+Object.defineProperty(exports, 'green', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_green).default;
+  }
+});
+
+var _lightGreen = __webpack_require__(1679);
+
+Object.defineProperty(exports, 'lightGreen', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_lightGreen).default;
+  }
+});
+
+var _lime = __webpack_require__(1680);
+
+Object.defineProperty(exports, 'lime', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_lime).default;
+  }
+});
+
+var _yellow = __webpack_require__(1681);
+
+Object.defineProperty(exports, 'yellow', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_yellow).default;
+  }
+});
+
+var _amber = __webpack_require__(1682);
+
+Object.defineProperty(exports, 'amber', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_amber).default;
+  }
+});
+
+var _orange = __webpack_require__(1683);
+
+Object.defineProperty(exports, 'orange', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_orange).default;
+  }
+});
+
+var _deepOrange = __webpack_require__(1684);
+
+Object.defineProperty(exports, 'deepOrange', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_deepOrange).default;
+  }
+});
+
+var _brown = __webpack_require__(1685);
+
+Object.defineProperty(exports, 'brown', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_brown).default;
+  }
+});
+
+var _grey = __webpack_require__(434);
+
+Object.defineProperty(exports, 'grey', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_grey).default;
+  }
+});
+
+var _blueGrey = __webpack_require__(1686);
+
+Object.defineProperty(exports, 'blueGrey', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_blueGrey).default;
+  }
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 1672 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// Wait https://github.com/facebook/flow/issues/380 to be fixed
+/* eslint-disable flowtype/require-valid-file-annotation */
+
+var purple = {
+  50: '#f3e5f5',
+  100: '#e1bee7',
+  200: '#ce93d8',
+  300: '#ba68c8',
+  400: '#ab47bc',
+  500: '#9c27b0',
+  600: '#8e24aa',
+  700: '#7b1fa2',
+  800: '#6a1b9a',
+  900: '#4a148c',
+  A100: '#ea80fc',
+  A200: '#e040fb',
+  A400: '#d500f9',
+  A700: '#aa00ff',
+  contrastDefaultColor: 'light'
+};
+
+exports.default = purple;
+
+/***/ }),
+/* 1673 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// Wait https://github.com/facebook/flow/issues/380 to be fixed
+/* eslint-disable flowtype/require-valid-file-annotation */
+
+var deepPurple = {
+  50: '#ede7f6',
+  100: '#d1c4e9',
+  200: '#b39ddb',
+  300: '#9575cd',
+  400: '#7e57c2',
+  500: '#673ab7',
+  600: '#5e35b1',
+  700: '#512da8',
+  800: '#4527a0',
+  900: '#311b92',
+  A100: '#b388ff',
+  A200: '#7c4dff',
+  A400: '#651fff',
+  A700: '#6200ea',
+  contrastDefaultColor: 'light'
+};
+
+exports.default = deepPurple;
+
+/***/ }),
+/* 1674 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// Wait https://github.com/facebook/flow/issues/380 to be fixed
+/* eslint-disable flowtype/require-valid-file-annotation */
+
+var blue = {
+  50: '#e3f2fd',
+  100: '#bbdefb',
+  200: '#90caf9',
+  300: '#64b5f6',
+  400: '#42a5f5',
+  500: '#2196f3',
+  600: '#1e88e5',
+  700: '#1976d2',
+  800: '#1565c0',
+  900: '#0d47a1',
+  A100: '#82b1ff',
+  A200: '#448aff',
+  A400: '#2979ff',
+  A700: '#2962ff',
+  contrastDefaultColor: 'light'
+};
+
+exports.default = blue;
+
+/***/ }),
+/* 1675 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// Wait https://github.com/facebook/flow/issues/380 to be fixed
+/* eslint-disable flowtype/require-valid-file-annotation */
+
+var lightBlue = {
+  50: '#e1f5fe',
+  100: '#b3e5fc',
+  200: '#81d4fa',
+  300: '#4fc3f7',
+  400: '#29b6f6',
+  500: '#03a9f4',
+  600: '#039be5',
+  700: '#0288d1',
+  800: '#0277bd',
+  900: '#01579b',
+  A100: '#80d8ff',
+  A200: '#40c4ff',
+  A400: '#00b0ff',
+  A700: '#0091ea',
+  contrastDefaultColor: 'dark'
+};
+
+exports.default = lightBlue;
+
+/***/ }),
+/* 1676 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// Wait https://github.com/facebook/flow/issues/380 to be fixed
+/* eslint-disable flowtype/require-valid-file-annotation */
+
+var cyan = {
+  50: '#e0f7fa',
+  100: '#b2ebf2',
+  200: '#80deea',
+  300: '#4dd0e1',
+  400: '#26c6da',
+  500: '#00bcd4',
+  600: '#00acc1',
+  700: '#0097a7',
+  800: '#00838f',
+  900: '#006064',
+  A100: '#84ffff',
+  A200: '#18ffff',
+  A400: '#00e5ff',
+  A700: '#00b8d4',
+  contrastDefaultColor: 'dark'
+};
+
+exports.default = cyan;
+
+/***/ }),
+/* 1677 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// Wait https://github.com/facebook/flow/issues/380 to be fixed
+/* eslint-disable flowtype/require-valid-file-annotation */
+
+var teal = {
+  50: '#e0f2f1',
+  100: '#b2dfdb',
+  200: '#80cbc4',
+  300: '#4db6ac',
+  400: '#26a69a',
+  500: '#009688',
+  600: '#00897b',
+  700: '#00796b',
+  800: '#00695c',
+  900: '#004d40',
+  A100: '#a7ffeb',
+  A200: '#64ffda',
+  A400: '#1de9b6',
+  A700: '#00bfa5',
+  contrastDefaultColor: 'dark'
+};
+
+exports.default = teal;
+
+/***/ }),
+/* 1678 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// Wait https://github.com/facebook/flow/issues/380 to be fixed
+/* eslint-disable flowtype/require-valid-file-annotation */
+
+var green = {
+  50: '#e8f5e9',
+  100: '#c8e6c9',
+  200: '#a5d6a7',
+  300: '#81c784',
+  400: '#66bb6a',
+  500: '#4caf50',
+  600: '#43a047',
+  700: '#388e3c',
+  800: '#2e7d32',
+  900: '#1b5e20',
+  A100: '#b9f6ca',
+  A200: '#69f0ae',
+  A400: '#00e676',
+  A700: '#00c853',
+  contrastDefaultColor: 'dark'
+};
+
+exports.default = green;
+
+/***/ }),
+/* 1679 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// Wait https://github.com/facebook/flow/issues/380 to be fixed
+/* eslint-disable flowtype/require-valid-file-annotation */
+
+var lightGreen = {
+  50: '#f1f8e9',
+  100: '#dcedc8',
+  200: '#c5e1a5',
+  300: '#aed581',
+  400: '#9ccc65',
+  500: '#8bc34a',
+  600: '#7cb342',
+  700: '#689f38',
+  800: '#558b2f',
+  900: '#33691e',
+  A100: '#ccff90',
+  A200: '#b2ff59',
+  A400: '#76ff03',
+  A700: '#64dd17',
+  contrastDefaultColor: 'dark'
+};
+
+exports.default = lightGreen;
+
+/***/ }),
+/* 1680 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// Wait https://github.com/facebook/flow/issues/380 to be fixed
+/* eslint-disable flowtype/require-valid-file-annotation */
+
+var lime = {
+  50: '#f9fbe7',
+  100: '#f0f4c3',
+  200: '#e6ee9c',
+  300: '#dce775',
+  400: '#d4e157',
+  500: '#cddc39',
+  600: '#c0ca33',
+  700: '#afb42b',
+  800: '#9e9d24',
+  900: '#827717',
+  A100: '#f4ff81',
+  A200: '#eeff41',
+  A400: '#c6ff00',
+  A700: '#aeea00',
+  contrastDefaultColor: 'dark'
+};
+
+exports.default = lime;
+
+/***/ }),
+/* 1681 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// Wait https://github.com/facebook/flow/issues/380 to be fixed
+/* eslint-disable flowtype/require-valid-file-annotation */
+
+var yellow = {
+  50: '#fffde7',
+  100: '#fff9c4',
+  200: '#fff59d',
+  300: '#fff176',
+  400: '#ffee58',
+  500: '#ffeb3b',
+  600: '#fdd835',
+  700: '#fbc02d',
+  800: '#f9a825',
+  900: '#f57f17',
+  A100: '#ffff8d',
+  A200: '#ffff00',
+  A400: '#ffea00',
+  A700: '#ffd600',
+  contrastDefaultColor: 'dark'
+};
+
+exports.default = yellow;
+
+/***/ }),
+/* 1682 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// Wait https://github.com/facebook/flow/issues/380 to be fixed
+/* eslint-disable flowtype/require-valid-file-annotation */
+
+var amber = {
+  50: '#fff8e1',
+  100: '#ffecb3',
+  200: '#ffe082',
+  300: '#ffd54f',
+  400: '#ffca28',
+  500: '#ffc107',
+  600: '#ffb300',
+  700: '#ffa000',
+  800: '#ff8f00',
+  900: '#ff6f00',
+  A100: '#ffe57f',
+  A200: '#ffd740',
+  A400: '#ffc400',
+  A700: '#ffab00',
+  contrastDefaultColor: 'dark'
+};
+
+exports.default = amber;
+
+/***/ }),
+/* 1683 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// Wait https://github.com/facebook/flow/issues/380 to be fixed
+/* eslint-disable flowtype/require-valid-file-annotation */
+
+var orange = {
+  50: '#fff3e0',
+  100: '#ffe0b2',
+  200: '#ffcc80',
+  300: '#ffb74d',
+  400: '#ffa726',
+  500: '#ff9800',
+  600: '#fb8c00',
+  700: '#f57c00',
+  800: '#ef6c00',
+  900: '#e65100',
+  A100: '#ffd180',
+  A200: '#ffab40',
+  A400: '#ff9100',
+  A700: '#ff6d00',
+  contrastDefaultColor: 'dark'
+};
+
+exports.default = orange;
+
+/***/ }),
+/* 1684 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// Wait https://github.com/facebook/flow/issues/380 to be fixed
+/* eslint-disable flowtype/require-valid-file-annotation */
+
+var deepOrange = {
+  50: '#fbe9e7',
+  100: '#ffccbc',
+  200: '#ffab91',
+  300: '#ff8a65',
+  400: '#ff7043',
+  500: '#ff5722',
+  600: '#f4511e',
+  700: '#e64a19',
+  800: '#d84315',
+  900: '#bf360c',
+  A100: '#ff9e80',
+  A200: '#ff6e40',
+  A400: '#ff3d00',
+  A700: '#dd2c00',
+  contrastDefaultColor: 'light'
+};
+
+exports.default = deepOrange;
+
+/***/ }),
+/* 1685 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// Wait https://github.com/facebook/flow/issues/380 to be fixed
+/* eslint-disable flowtype/require-valid-file-annotation */
+
+var brown = {
+  50: '#efebe9',
+  100: '#d7ccc8',
+  200: '#bcaaa4',
+  300: '#a1887f',
+  400: '#8d6e63',
+  500: '#795548',
+  600: '#6d4c41',
+  700: '#5d4037',
+  800: '#4e342e',
+  900: '#3e2723',
+  A100: '#d7ccc8',
+  A200: '#bcaaa4',
+  A400: '#8d6e63',
+  A700: '#5d4037',
+  contrastDefaultColor: 'brown'
+};
+
+exports.default = brown;
+
+/***/ }),
+/* 1686 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// Wait https://github.com/facebook/flow/issues/380 to be fixed
+/* eslint-disable flowtype/require-valid-file-annotation */
+
+var blueGrey = {
+  50: '#eceff1',
+  100: '#cfd8dc',
+  200: '#b0bec5',
+  300: '#90a4ae',
+  400: '#78909c',
+  500: '#607d8b',
+  600: '#546e7a',
+  700: '#455a64',
+  800: '#37474f',
+  900: '#263238',
+  A100: '#cfd8dc',
+  A200: '#b0bec5',
+  A400: '#78909c',
+  A700: '#455a64',
+  contrastDefaultColor: 'light'
+};
+
+exports.default = blueGrey;
 
 /***/ })
 /******/ ]);

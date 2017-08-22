@@ -1,44 +1,37 @@
 import React, { Component } from 'react'
 
 import Typography from 'material-ui/Typography'
-import { withStyles } from 'material-ui/styles'
+import { withTheme } from 'material-ui/styles'
 
-
-const styles = (theme) => ({
-  common: {
-    fontSize: '14px'
-  },
-  container: {
-    // borderLeft: '1px solid #ddd',
-    // borderRadius: '10px',
-    padding: '10px',
-  },
-  h1: {
-
-  },
-  h2: {
-    paddingLeft: '1em'
-  }
-})
 
 class DetailCatalog extends Component {
   render() {
     const {
-      classes
+      theme
     } = this.props
 
     return (
-      <div id="detailCatalog" className={`${classes.common} ${classes.container}`}>
+      <div id="detailCatalog" style={{
+        padding: '2em'
+      }}>
         {
           [...'123'].map((v, i) => (
             <div key={i}>
-              <h1 className={`${classes.common} ${classes.h1}`}>
-                <b>Title{i}</b>
-              </h1>
+              <div style={{
+                fontSize: '14px',
+                padding: '0.8em 0 0 0',
+                color: theme.detailCatalog.titleColor
+              }}>
+                <b>TitleTitleTitleTitleTitle{i+1}...</b>
+              </div>
               {
                 [...'123'].map((v, i) => (
-                  <h2 key={i} className={`${classes.common} ${classes.h2}`}>
-                    SubTitle{i}
+                  <h2 key={i} style={{
+                    fontSize: '14px',
+                    padding: '0.2em 0 0 1em',
+                    color: theme.detailCatalog.color,
+                  }}>
+                    SubTitle{i+1}
                   </h2>
                 ))
               }
@@ -51,4 +44,4 @@ class DetailCatalog extends Component {
 }
 
 
-export default withStyles(styles)(DetailCatalog)
+export default withTheme(DetailCatalog)

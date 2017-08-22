@@ -23,6 +23,7 @@ class DetailPage extends Component {
     return (
       <div>
         <Paper style={{
+          background: 'none',
           padding: '1em 0 1em 2em'
         }}>
           <Breadcrumb />
@@ -41,18 +42,37 @@ class DetailPage extends Component {
               }
             />
           </Grid>
-          <Hidden only={['sm', 'xs']}>
-            <Grid item>
+          {/* <Hidden only={['sm', 'xs']}>
+            <Grid style={{
+              overflow: 'hidden'
+            }}>
               <div style={{
                 position: 'fixed',
-                top: '5px',
-                padding: '2em 0 0 1.8em',
+                height: '100%',
+                top: '1em',
+                padding: '1em 0 1 1.2em',
+                overflow: 'auto'
               }}>
                 <DetailCatalog />
               </div>
             </Grid>
-          </Hidden>
+          </Hidden> */}
         </Grid>
+
+        <div
+          style={{
+            padding: '1em 0 0 0 '
+          }}
+          children={
+            <Grid container justify='center'>
+              <Grid item >
+                <BackToTop />
+              </Grid>
+              {/* <Grid item xs={1} /> */}
+            </Grid>
+          }
+        />
+
 
         <AboutMe />
         <Copyright />

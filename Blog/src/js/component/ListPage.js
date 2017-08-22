@@ -16,6 +16,7 @@ export default function ListPage() {
     <div>
 
       <Paper style={{
+        background: 'none',
         padding: '1em 0 1em 2em'
       }}>
         <Breadcrumb />

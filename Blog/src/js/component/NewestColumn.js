@@ -5,22 +5,29 @@ import Paper from 'material-ui/Paper'
 import Hidden from 'material-ui/Hidden'
 import Typography from 'material-ui/Typography'
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
+import { withTheme } from 'material-ui/styles'
 
 
 
-export default NewestColumn
+export default withTheme(NewestColumn)
 
-function NewestColumn() {
+function NewestColumn({
+  theme
+}) {
   return (
     <div>
-      <Paper>
+      <Paper style={{
+        background: 'none'
+      }}>
         <div
           style={{
             textAlign: 'center',
-            padding: '0 0 1em 0',
-            borderBottom: '1px solid #ccc'
+            padding: '1em 0 1em 0',
+            borderBottom: `1px solid ${theme.newestColumn.lineColor}`,
           }}>
-          <Typography type='title'>
+          <Typography type='title' style={{
+            color: theme.newestColumn.titleColor
+          }} >
             The newest
           </Typography>
         </div>
@@ -38,12 +45,14 @@ function NewestColumn() {
                       <Hidden only={['sm', 'xs']}>
                         <Grid item md={4} style={{
                           textAlign: 'center',
-                          color: '#666'
+                          color: theme.newestColumn.timeColor
                         }}>
                           2017/08/21
                         </Grid>
                       </Hidden>
-                      <Grid item md={8} sm={12}>
+                      <Grid item md={8} sm={12} style={{
+                        color: theme.newestColumn.color
+                      }}>
                         博客的标题{Math.pow(i + 1, 10)}
                       </Grid>
                     </Grid>

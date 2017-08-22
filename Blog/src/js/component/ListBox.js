@@ -1,9 +1,15 @@
 import React from 'react'
 
+import { withTheme } from 'material-ui/styles'
 
 import ListBoxItem from './ListBoxItem'
 
-export default function ListBox() {
+
+export default withTheme(ListBox)
+
+function ListBox({
+  theme
+}) {
   return (
     <div>
         {

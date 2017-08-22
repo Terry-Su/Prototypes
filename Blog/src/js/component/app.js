@@ -6,17 +6,20 @@ import {
 import Blog from './Blog'
 
 render(
-  <Blog/>,
+  <Blog />,
   document.getElementById('app')
 )
 
 // resolve url redirect
-resolveUrl() 
+resolveUrl()
 
 function resolveUrl() {
   const Url = new URL(window.location.href)
-  const param = Url.searchParams.get('p')
-  if (param) {
-    browserHistory.push(param)
+  const { searchParams } = Url
+  if (searchParams) {
+    const param = Url.searchParams.get('p')
+    if (param) {
+      browserHistory.push(param)
+    }
   }
 }

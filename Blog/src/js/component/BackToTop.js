@@ -1,22 +1,32 @@
 import React from 'react'
 
-import Avatar from 'material-ui/Avatar'
-import FolderIcon from 'material-ui-icons/Folder';
+import Button from 'material-ui/Button'
+import { withTheme } from 'material-ui/styles'
 
-export default class BackToTop extends React.Component {
+
+class BackToTop extends React.Component {
   render() {
+    const {
+      theme
+    } = this.props
+
     return (
       <div>
-        <Avatar
+        <Button
+          disableRipple
           style={{
-            color: 'white',
-            background: '#50aef2'
+            color: theme.backToTop.color,
+            background: 'none',
+            padding: '1em',
+            
           }}
           children={
-            <FolderIcon />
+            <a>Back To Top</a>
           }
         />
       </div>
     )
   }
 }
+
+export default withTheme(BackToTop)

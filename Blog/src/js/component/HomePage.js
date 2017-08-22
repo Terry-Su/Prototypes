@@ -23,7 +23,7 @@ export default class HomePage extends Component {
 
         <div
           style={{
-            padding: '2em 0 0 0'
+            padding: '1em 0 0 0'
           }}
           children={
             <Grid container justify='center' spacing={40}>

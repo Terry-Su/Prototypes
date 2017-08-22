@@ -1,21 +1,29 @@
 import React from 'react'
 
+import Grid from 'material-ui/Grid'
+import Avatar from 'material-ui/Avatar'
+
 import Tags from './Tags'
 
 export default function AboutMe() {
   return (
-    <div style={{
-      padding: '150px 0 0 0',
-      textAlign: 'center',
-      fontSize: '12px',
-    }}>
-      <a style={{
-        color: '#666'
-      }}>mail@mail.com</a>
-      &nbsp; | &nbsp; 
-      <a style={{
-        color: '#666'
-      }}>Github</a>
-    </div>
+    <Grid
+      container
+      justify='center'
+      style={{
+        paddingTop: '5em'
+      }}
+      children={
+        <Grid
+          item
+          children={
+            <img
+              src='./images/gb-icon.png'
+              width='30'
+            />
+          }
+        />
+      }
+    />
   )
 }
