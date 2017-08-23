@@ -14443,7 +14443,7 @@ function Copyright() {
     { id: 'copyright', style: {
         background: 'none',
         textAlign: 'center',
-        padding: '5px',
+        padding: '0.2em 0 0.6em 0',
         fontSize: '12px',
         color: '#666'
       } },
@@ -62858,6 +62858,10 @@ var _Grid = __webpack_require__(700);
 
 var _Grid2 = _interopRequireDefault(_Grid);
 
+var _Hidden = __webpack_require__(701);
+
+var _Hidden2 = _interopRequireDefault(_Hidden);
+
 var _Catalog = __webpack_require__(690);
 
 var _Catalog2 = _interopRequireDefault(_Catalog);
@@ -62877,6 +62881,14 @@ var _AboutMe2 = _interopRequireDefault(_AboutMe);
 var _Copyright = __webpack_require__(223);
 
 var _Copyright2 = _interopRequireDefault(_Copyright);
+
+var _ThemeSwitch = __webpack_require__(1687);
+
+var _ThemeSwitch2 = _interopRequireDefault(_ThemeSwitch);
+
+var _LangSwitch = __webpack_require__(1688);
+
+var _LangSwitch2 = _interopRequireDefault(_LangSwitch);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -62905,11 +62917,49 @@ var HomePage = function (_Component) {
           style: {
             padding: '1em 0 3em 0'
           },
-          children: _react2.default.createElement(_Notion2.default, null)
+          children: _react2.default.createElement(
+            _Grid2.default,
+            { container: true },
+            _react2.default.createElement(
+              _Grid2.default,
+              { item: true, sm: 7, xs: 11, style: {
+                  padding: '0 0 0 2em'
+                } },
+              _react2.default.createElement(_Notion2.default, null)
+            ),
+            _react2.default.createElement(
+              _Hidden2.default,
+              { only: ['xl', 'lg', 'md', 'sm'] },
+              _react2.default.createElement(_Grid2.default, { item: true, xs: 11, style: {
+                  padding: '2em 0 0 0'
+                } })
+            ),
+            _react2.default.createElement(
+              _Grid2.default,
+              { item: true, container: true, sm: 5, xs: 11, justify: 'flex-end', align: 'center' },
+              _react2.default.createElement('div', {
+                style: {
+                  padding: '0 2em 0 0'
+                },
+                children: _react2.default.createElement(
+                  'div',
+                  null,
+                  _react2.default.createElement('span', {
+                    style: {
+                      display: 'inline-block',
+                      padding: '0 1.5em 0 0'
+                    },
+                    children: _react2.default.createElement(_ThemeSwitch2.default, null)
+                  }),
+                  _react2.default.createElement(_LangSwitch2.default, null)
+                )
+              })
+            )
+          )
         }),
         _react2.default.createElement('div', {
           style: {
-            padding: '1em 0 0 0'
+            padding: '2em 0 0 0'
           },
           children: _react2.default.createElement(
             _Grid2.default,
@@ -68084,16 +68134,21 @@ function NewestColumn(_ref) {
                 _Grid2.default,
                 { container: true },
                 _react2.default.createElement(
-                  _Hidden2.default,
-                  { only: ['sm', 'xs'] },
+                  _Grid2.default,
+                  { item: true, md: 4, style: {
+                      textAlign: 'center',
+                      color: theme.newestColumn.timeColor
+                    } },
                   _react2.default.createElement(
-                    _Grid2.default,
-                    { item: true, md: 4, style: {
-                        textAlign: 'center',
-                        color: theme.newestColumn.timeColor
-                      } },
-                    '2017/08/21'
-                  )
+                    _Hidden2.default,
+                    { only: ['xs'] },
+                    _react2.default.createElement(
+                      'span',
+                      null,
+                      '2017/'
+                    )
+                  ),
+                  '08/21'
                 ),
                 _react2.default.createElement(
                   _Grid2.default,
@@ -69613,6 +69668,10 @@ var _Paper = __webpack_require__(691);
 
 var _Paper2 = _interopRequireDefault(_Paper);
 
+var _Hidden = __webpack_require__(701);
+
+var _Hidden2 = _interopRequireDefault(_Hidden);
+
 var _Breadcrumb = __webpack_require__(704);
 
 var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
@@ -69633,20 +69692,58 @@ var _Copyright = __webpack_require__(223);
 
 var _Copyright2 = _interopRequireDefault(_Copyright);
 
+var _ThemeSwitch = __webpack_require__(1687);
+
+var _ThemeSwitch2 = _interopRequireDefault(_ThemeSwitch);
+
+var _LangSwitch = __webpack_require__(1688);
+
+var _LangSwitch2 = _interopRequireDefault(_LangSwitch);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function ListPage() {
   return _react2.default.createElement(
     'div',
     null,
-    _react2.default.createElement(
-      _Paper2.default,
-      { style: {
-          background: 'none',
-          padding: '1em 0 1em 2em'
-        } },
-      _react2.default.createElement(_Breadcrumb2.default, null)
-    ),
+    _react2.default.createElement(_Paper2.default, {
+      style: {
+        background: 'none',
+        padding: '2em 0 1em 0'
+      },
+      children: _react2.default.createElement(
+        _Grid2.default,
+        { container: true },
+        _react2.default.createElement(
+          _Grid2.default,
+          { item: true, xs: 7, style: {
+              padding: '0 0 0 2em'
+            } },
+          _react2.default.createElement(_Breadcrumb2.default, null)
+        ),
+        _react2.default.createElement(
+          _Grid2.default,
+          { item: true, container: true, xs: 5, justify: 'flex-end', align: 'center' },
+          _react2.default.createElement('div', {
+            style: {
+              padding: '0 2em 0 0'
+            },
+            children: _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement('span', {
+                style: {
+                  display: 'inline-block',
+                  padding: '0 1.5em 0 0'
+                },
+                children: _react2.default.createElement(_ThemeSwitch2.default, null)
+              }),
+              _react2.default.createElement(_LangSwitch2.default, null)
+            )
+          })
+        )
+      )
+    }),
     _react2.default.createElement('div', {
       style: {
         padding: '2em 0 0 0'
@@ -69659,7 +69756,11 @@ function ListPage() {
           { item: true, md: 3, sm: 3, xs: 11 },
           _react2.default.createElement(_Catalog2.default, null)
         ),
-        _react2.default.createElement(_Grid2.default, { item: true, md: 1, sm: 1 }),
+        _react2.default.createElement(
+          _Hidden2.default,
+          { only: ['xs'] },
+          _react2.default.createElement(_Grid2.default, { item: true, md: 1, sm: 1 })
+        ),
         _react2.default.createElement(
           _Grid2.default,
           { item: true, md: 6, sm: 7, xs: 11 },
@@ -69803,6 +69904,14 @@ var _Hidden = __webpack_require__(701);
 
 var _Hidden2 = _interopRequireDefault(_Hidden);
 
+var _ThemeSwitch = __webpack_require__(1687);
+
+var _ThemeSwitch2 = _interopRequireDefault(_ThemeSwitch);
+
+var _LangSwitch = __webpack_require__(1688);
+
+var _LangSwitch2 = _interopRequireDefault(_LangSwitch);
+
 var _Breadcrumb = __webpack_require__(704);
 
 var _Breadcrumb2 = _interopRequireDefault(_Breadcrumb);
@@ -69854,14 +69963,44 @@ var DetailPage = function (_Component) {
       return _react2.default.createElement(
         'div',
         null,
-        _react2.default.createElement(
-          _Paper2.default,
-          { style: {
-              background: 'none',
-              padding: '1em 0 1em 2em'
-            } },
-          _react2.default.createElement(_Breadcrumb2.default, null)
-        ),
+        _react2.default.createElement(_Paper2.default, {
+          style: {
+            background: 'none',
+            padding: '2em 0 1em 0'
+          },
+          children: _react2.default.createElement(
+            _Grid2.default,
+            { container: true },
+            _react2.default.createElement(
+              _Grid2.default,
+              { item: true, xs: 7, style: {
+                  padding: '0 0 0 2em'
+                } },
+              _react2.default.createElement(_Breadcrumb2.default, null)
+            ),
+            _react2.default.createElement(
+              _Grid2.default,
+              { item: true, container: true, xs: 5, justify: 'flex-end', align: 'center' },
+              _react2.default.createElement('div', {
+                style: {
+                  padding: '0 2em 0 0'
+                },
+                children: _react2.default.createElement(
+                  'div',
+                  null,
+                  _react2.default.createElement('span', {
+                    style: {
+                      display: 'inline-block',
+                      padding: '0 1.5em 0 0'
+                    },
+                    children: _react2.default.createElement(_ThemeSwitch2.default, null)
+                  }),
+                  _react2.default.createElement(_LangSwitch2.default, null)
+                )
+              })
+            )
+          )
+        }),
         _react2.default.createElement(
           _Grid2.default,
           { container: true, justify: 'center' },
@@ -72332,6 +72471,12 @@ var getCustomTheme = function getCustomTheme(primary, secondary) {
       color: _colors.grey[700],
       titleColor: _colors.grey[1000]
     },
+    langSwitch: {
+      defaultColor: _colors.grey[600],
+      defaultBackgroundColor: primary[isSimple ? 0 : 50],
+      hoverColor: _colors.grey[800],
+      hoverBackgroundColor: primary[900]
+    },
     listBox: {
       color: _colors.grey[700],
       titleColor: _colors.grey[1000]
@@ -72348,14 +72493,19 @@ var getCustomTheme = function getCustomTheme(primary, secondary) {
       activeColor: '#fff',
       backgroundColor: secondary[isSimple ? 50 : 100],
       color: secondary[700]
-
+    },
+    themeSwitch: {
+      defaultColor: primary[900],
+      defaultBackgroundColor: primary[isSimple ? 0 : 50],
+      hoverColor: primary[800],
+      hoverBackgroundColor: primary[900]
     }
   };
 };
 
 var themes = {
   spring: function spring() {
-    return getCustomTheme(_colors.lightGreen, _colors.green);
+    return getCustomTheme(_colors.lightGreen, _colors.blue);
   },
   summer: function summer() {
     return getCustomTheme(_colors.lightBlue, _colors.blue);
@@ -72368,7 +72518,7 @@ var themes = {
   }
 };
 
-var customStyle = themes.summer();
+var customStyle = themes.spring();
 
 // {
 //   background: {
@@ -73103,6 +73253,259 @@ var blueGrey = {
 };
 
 exports.default = blueGrey;
+
+/***/ }),
+/* 1687 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _styles = __webpack_require__(150);
+
+var _Paper = __webpack_require__(691);
+
+var _Paper2 = _interopRequireDefault(_Paper);
+
+var _Avatar = __webpack_require__(1637);
+
+var _Avatar2 = _interopRequireDefault(_Avatar);
+
+var _AWrapper = __webpack_require__(1690);
+
+var _AWrapper2 = _interopRequireDefault(_AWrapper);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ThemeSwitch = function (_Component) {
+  _inherits(ThemeSwitch, _Component);
+
+  function ThemeSwitch() {
+    _classCallCheck(this, ThemeSwitch);
+
+    return _possibleConstructorReturn(this, (ThemeSwitch.__proto__ || Object.getPrototypeOf(ThemeSwitch)).apply(this, arguments));
+  }
+
+  _createClass(ThemeSwitch, [{
+    key: 'render',
+    value: function render() {
+      var theme = this.props.theme;
+      var themeTag = theme.tag;
+
+
+      return _react2.default.createElement(_AWrapper2.default, {
+        href: 'javascript:void(0)',
+        defaultColor: theme.themeSwitch.defaultColor,
+        hoverColor: theme.themeSwitch.hoverColor,
+        style: {
+          display: 'inline-block',
+          fontSize: '14px',
+          textDecoration: 'none'
+        },
+        children: 'Spring'
+      });
+    }
+  }]);
+
+  return ThemeSwitch;
+}(_react.Component);
+
+exports.default = (0, _styles.withTheme)(ThemeSwitch);
+
+/***/ }),
+/* 1688 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _styles = __webpack_require__(150);
+
+var _Paper = __webpack_require__(691);
+
+var _Paper2 = _interopRequireDefault(_Paper);
+
+var _Avatar = __webpack_require__(1637);
+
+var _Avatar2 = _interopRequireDefault(_Avatar);
+
+var _AWrapper = __webpack_require__(1690);
+
+var _AWrapper2 = _interopRequireDefault(_AWrapper);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var LangSwitch = function (_Component) {
+  _inherits(LangSwitch, _Component);
+
+  function LangSwitch() {
+    _classCallCheck(this, LangSwitch);
+
+    return _possibleConstructorReturn(this, (LangSwitch.__proto__ || Object.getPrototypeOf(LangSwitch)).apply(this, arguments));
+  }
+
+  _createClass(LangSwitch, [{
+    key: 'render',
+    value: function render() {
+      var theme = this.props.theme;
+      var themeTag = theme.tag;
+
+
+      return _react2.default.createElement(_AWrapper2.default, {
+        defaultColor: theme.langSwitch.defaultColor,
+        hoverColor: theme.langSwitch.hoverColor,
+        style: {
+          display: 'inline-block',
+          fontSize: '14px',
+          textDecoration: 'none'
+        },
+        children: '中文'
+      });
+    }
+  }]);
+
+  return LangSwitch;
+}(_react.Component);
+
+exports.default = (0, _styles.withTheme)(LangSwitch);
+
+/***/ }),
+/* 1689 */,
+/* 1690 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AWrapper = function (_React$Component) {
+  _inherits(AWrapper, _React$Component);
+
+  function AWrapper(props) {
+    _classCallCheck(this, AWrapper);
+
+    var _this = _possibleConstructorReturn(this, (AWrapper.__proto__ || Object.getPrototypeOf(AWrapper)).call(this, props));
+
+    _this.onMouseEnter = function () {
+      _this.setState({
+        hover: true
+      });
+    };
+
+    _this.onMouseOut = function () {
+      _this.setState({
+        hover: false
+      });
+    };
+
+    _this.state = {
+      hover: false
+    };
+    return _this;
+  }
+
+  _createClass(AWrapper, [{
+    key: 'render',
+    value: function render() {
+      var state = this.state;
+
+      var _props = this.props,
+          defaultColor = _props.defaultColor,
+          defaultBackgroundColor = _props.defaultBackgroundColor,
+          hoverColor = _props.hoverColor,
+          hoverBackgroundColor = _props.hoverBackgroundColor,
+          restProps = _objectWithoutProperties(_props, ['defaultColor', 'defaultBackgroundColor', 'hoverColor', 'hoverBackgroundColor']);
+
+      return _react2.default.createElement('a', _extends({}, restProps, {
+        onMouseEnter: this.onMouseEnter,
+        onMouseOut: this.onMouseOut,
+        style: _extends({}, this.props.style, {
+          color: state.hover ? hoverColor : defaultColor,
+          backgroundColor: state.hover ? hoverBackgroundColor : defaultBackgroundColor
+        })
+      }));
+    }
+  }]);
+
+  return AWrapper;
+}(_react2.default.Component);
+
+// var Link = React.createClass({
+//   getInitialState: function () {
+//     return { hover: false }
+//   },
+//   toggleHover: function () {
+//     this.setState({ hover: !this.state.hover })
+//   },
+//   render: function () {
+//     var linkStyle;
+//     if (this.state.hover) {
+//       linkStyle = { backgroundColor: 'red' }
+//     } else {
+//       linkStyle = { backgroundColor: 'blue' }
+//     }
+//     return (
+//       <div>
+//         <a style={linkStyle} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>Link</a>
+//       </div>
+//     )
+//   }
+
+
+exports.default = AWrapper;
 
 /***/ })
 /******/ ]);

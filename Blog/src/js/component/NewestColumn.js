@@ -42,14 +42,17 @@ function NewestColumn({
                 [...'12345'].map((v, i) => (
                   <ListItem key={i}>
                     <Grid container>
-                      <Hidden only={['sm', 'xs']}>
-                        <Grid item md={4} style={{
-                          textAlign: 'center',
-                          color: theme.newestColumn.timeColor
-                        }}>
-                          2017/08/21
-                        </Grid>
-                      </Hidden>
+                      {/* <Hidden only={['sm', 'xs']}>
+
+                      </Hidden> */}
+                      <Grid item md={4} style={{
+                        textAlign: 'center',
+                        color: theme.newestColumn.timeColor
+                      }}>
+                        <Hidden only={['xs']}>
+                          <span>2017/</span>
+                        </Hidden>08/21
+                      </Grid>
                       <Grid item md={8} sm={12} style={{
                         color: theme.newestColumn.color
                       }}>

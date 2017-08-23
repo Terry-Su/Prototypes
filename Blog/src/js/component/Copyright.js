@@ -8,7 +8,7 @@ export default function Copyright() {
     <Paper id="copyright" style={{
       background: 'none',
       textAlign: 'center',
-      padding: '5px',
+      padding: '0.2em 0 0.6em 0',
       fontSize: '12px',
       color: '#666'
     }}>

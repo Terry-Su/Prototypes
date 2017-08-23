@@ -9,6 +9,8 @@ import {
   cyan,
   grey,
   teal,
+  indigo,
+  lime,
 } from 'material-ui/colors'
 
 
@@ -35,17 +37,25 @@ const getCustomTheme = (primary, secondary) => {
       borderColor: isSimple ? grey[300] : grey[400],
       color: grey[800],
       hoverColor: primary[
-        isSimple ? 0 : 50
+      isSimple ? 0 : 50
       ],
     },
     comment: {
       borderColor: grey[
-        isSimple ? 300 : 300
+      isSimple ? 300 : 300
       ]
     },
     detailCatalog: {
       color: grey[700],
       titleColor: grey[1000]
+    },
+    langSwitch: {
+      defaultColor: grey[600],
+      defaultBackgroundColor: primary[
+      isSimple ? 0 : 50
+      ],
+      hoverColor: grey[800],
+      hoverBackgroundColor: primary[900]
     },
     listBox: {
       color: grey[700],
@@ -55,24 +65,31 @@ const getCustomTheme = (primary, secondary) => {
       color: grey[900],
       titleColor: grey[1000],
       timeColor: grey[700],
-      lineColor: isSimple ? grey[300] : grey[400]      
+      lineColor: isSimple ? grey[300] : grey[400]
     },
-    
+
     tag: {
       activeBackgroundColor: secondary[700],
       activeColor: '#fff',
       backgroundColor: secondary[
-        isSimple ? 50 : 100
+      isSimple ? 50 : 100
       ],
       color: secondary[700],
-
+    },
+    themeSwitch: {
+      defaultColor: primary[900],
+      defaultBackgroundColor: primary[
+      isSimple ? 0 : 50
+      ],
+      hoverColor: primary[800],
+      hoverBackgroundColor: primary[900]
     },
   }
 }
 
 const themes = {
   spring() {
-    return getCustomTheme(lightGreen, green)
+    return getCustomTheme(lightGreen, blue)
   },
   summer() {
     return getCustomTheme(lightBlue, blue)
@@ -85,7 +102,7 @@ const themes = {
   },
 }
 
-const customStyle = themes.summer()
+const customStyle = themes.spring()
 
 // {
 //   background: {

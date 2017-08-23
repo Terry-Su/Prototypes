@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import Grid from 'material-ui/Grid'
 import Paper from 'material-ui/Paper'
 import Hidden from 'material-ui/Hidden'
+import ThemeSwitch from './ThemeSwitch'
+import LangSwitch from './LangSwitch'
 
 
 import Breadcrumb from './Breadcrumb'
@@ -22,12 +24,43 @@ class DetailPage extends Component {
   render() {
     return (
       <div>
-        <Paper style={{
-          background: 'none',
-          padding: '1em 0 1em 2em'
-        }}>
-          <Breadcrumb />
-        </Paper>
+        <Paper
+          style={{
+            background: 'none',
+            padding: '2em 0 1em 0'
+          }}
+          children={
+            <Grid container>
+              <Grid item xs={7} style={{
+                padding: '0 0 0 2em'
+              }}>
+                <Breadcrumb />
+              </Grid>
+              <Grid item container xs={5} justify='flex-end' align='center'>
+                <div
+                  style={{
+                    padding: '0 2em 0 0'
+                  }}
+                  children={
+                    <div>
+                      <span
+                        style={{
+                          display: 'inline-block',
+                          padding: '0 1.5em 0 0'
+                        }}
+                        children={
+                          <ThemeSwitch />
+                        }
+                      />
+
+                      <LangSwitch />
+                    </div>
+                  }
+                />
+              </Grid>
+            </Grid>
+          }
+        />
 
         <Grid container justify='center'>
           <Grid item md={6} sm={11} xs={11}>
