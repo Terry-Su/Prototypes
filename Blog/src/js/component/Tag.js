@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 import Chip from 'material-ui/Chip'
 import Button from 'material-ui/Button'
-import { withStyles } from 'material-ui/styles'
 import { withTheme } from 'material-ui/styles'
 
 

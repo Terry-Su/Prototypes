@@ -7,6 +7,7 @@ import Typography from 'material-ui/Typography'
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List'
 import { withTheme } from 'material-ui/styles'
 
+import NewestColumnItem from './NewestColumnItem'
 
 
 export default withTheme(NewestColumn)
@@ -40,26 +41,7 @@ function NewestColumn({
             <List>
               {
                 [...'12345'].map((v, i) => (
-                  <ListItem key={i}>
-                    <Grid container>
-                      {/* <Hidden only={['sm', 'xs']}>
-
-                      </Hidden> */}
-                      <Grid item md={4} style={{
-                        textAlign: 'center',
-                        color: theme.newestColumn.timeColor
-                      }}>
-                        <Hidden only={['xs']}>
-                          <span>2017/</span>
-                        </Hidden>08/21
-                      </Grid>
-                      <Grid item md={8} sm={12} style={{
-                        color: theme.newestColumn.color
-                      }}>
-                        Blog's title{Math.pow(i + 1, 10)}
-                      </Grid>
-                    </Grid>
-                  </ListItem>
+                  <NewestColumnItem key={i} />
                 ))
               }
             </List>

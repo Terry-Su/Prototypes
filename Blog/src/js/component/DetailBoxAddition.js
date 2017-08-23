@@ -28,8 +28,9 @@ export default function DetailBoxAddition() {
         padding: '5px 0 5px 0'
       }}>
         <b>Reprinting Note:&nbsp;&nbsp;</b>
-        <span></span>
-        This article is original, reprint please indicate the source.
+        <span>
+          This article is original, reprint please indicate the source
+        </span>
         {/* 本文为原创文章，转载请注明出处 */}
       </div>
     </div>

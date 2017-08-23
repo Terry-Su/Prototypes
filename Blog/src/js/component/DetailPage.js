@@ -63,7 +63,7 @@ class DetailPage extends Component {
         />
 
         <Grid container justify='center'>
-          <Grid item md={6} sm={11} xs={11}>
+          <Grid item lg={8} md={8} sm={11} xs={11}>
             <DetailBox />
 
             <div

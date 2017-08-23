@@ -11,6 +11,9 @@ import {
   teal,
   indigo,
   lime,
+  yellow,
+  orange,
+  deepOrange,
 } from 'material-ui/colors'
 
 
@@ -25,7 +28,7 @@ const getCustomTheme = (primary, secondary) => {
     subColor: primary[50],
 
     backToTop: {
-      color: grey[900]
+      color: grey[600]
     },
     breadcrumb: {
       color: grey[900]
@@ -42,7 +45,7 @@ const getCustomTheme = (primary, secondary) => {
     },
     comment: {
       borderColor: grey[
-      isSimple ? 300 : 300
+      isSimple ? 300 : 400
       ]
     },
     detailCatalog: {
@@ -67,7 +70,6 @@ const getCustomTheme = (primary, secondary) => {
       timeColor: grey[700],
       lineColor: isSimple ? grey[300] : grey[400]
     },
-
     tag: {
       activeBackgroundColor: secondary[700],
       activeColor: '#fff',
@@ -93,6 +95,7 @@ const themes = {
   },
   summer() {
     return getCustomTheme(lightBlue, blue)
+    // return getCustomTheme(yellow, deepOrange)
   },
   autumn() {
     return getCustomTheme(amber, brown)

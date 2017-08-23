@@ -64,7 +64,7 @@ export default class HomePage extends Component {
           }}
           children={
             <Grid container justify='center' spacing={40}>
-              <Grid item md={5} sm={5} xs={11}>
+              <Grid item md={5} sm={6} xs={11}>
                 <NewestColumn />
               </Grid>
               <Grid item md={1} sm={1} xs={12} />

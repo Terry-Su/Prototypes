@@ -5,6 +5,9 @@ import { withTheme } from 'material-ui/styles'
 
 
 class BackToTop extends React.Component {
+  constructor(props) {
+    super(props)
+  }
   render() {
     const {
       theme
@@ -18,10 +21,9 @@ class BackToTop extends React.Component {
             color: theme.backToTop.color,
             background: 'none',
             padding: '1em',
-            
           }}
           children={
-            <a>Back To Top</a>
+            <span>Back To Top</span>
           }
         />
       </div>
