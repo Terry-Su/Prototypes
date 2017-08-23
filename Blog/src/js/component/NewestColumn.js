@@ -56,7 +56,7 @@ function NewestColumn({
                       <Grid item md={8} sm={12} style={{
                         color: theme.newestColumn.color
                       }}>
-                        博客的标题{Math.pow(i + 1, 10)}
+                        Blog's title{Math.pow(i + 1, 10)}
                       </Grid>
                     </Grid>
                   </ListItem>

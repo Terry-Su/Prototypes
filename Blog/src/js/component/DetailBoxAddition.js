@@ -2,7 +2,7 @@ import React from 'react'
 
 import Tags from './Tags'
 
-export default function DetailBoxInfo() {
+export default function DetailBoxAddition() {
   return (
     <div style={{
       textAlign: 'right',
@@ -20,15 +20,17 @@ export default function DetailBoxInfo() {
       <div style={{
         padding: '5px 0 5px 0'
       }}>
-        <b>创建时间： </b>
+        <b>Created Time:&nbsp;&nbsp;</b>
         <span>2017/07/31 19:50</span>
       </div>
 
       <div style={{
         padding: '5px 0 5px 0'
       }}>
-        <b>转载说明： </b>
-        <span>本文为原创文章，转载请注明出处</span>
+        <b>Reprinting Note:&nbsp;&nbsp;</b>
+        <span></span>
+        This article is original, reprint please indicate the source.
+        {/* 本文为原创文章，转载请注明出处 */}
       </div>
     </div>
   )

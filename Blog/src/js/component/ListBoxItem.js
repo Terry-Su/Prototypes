@@ -18,7 +18,7 @@ function ListBoxItem({
         padding: '10px 0',
         color: theme.listBox.titleColor
       }}>
-        博客的标题
+        Blog's title
       </Typography>
       <Typography type="caption" component="p" style={{
         color: theme.listBox.color

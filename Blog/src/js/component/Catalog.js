@@ -26,7 +26,7 @@ function Catalog({
           <ListItem button disableRipple style={{
             backgroundColor: theme.catalog.activeBackgroundColor,
             color: theme.catalog.activeColor
-          }}>目录1</ListItem>
+          }}>Category name1</ListItem>
           {
             [...'12345'].map((v, i) => (
               <ListItem
@@ -36,7 +36,7 @@ function Catalog({
                 style={{
                   color: theme.catalog.color
                 }}
-              >目录{i + 2}</ListItem>
+              >Category name{i + 2}</ListItem>
             ))
           }
         </List>

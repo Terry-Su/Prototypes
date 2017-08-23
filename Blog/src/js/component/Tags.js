@@ -11,9 +11,9 @@ export default class Tags extends Component {
       <div style={{
         padding: '10px'
       }}>
-        <Tag active>标签1</Tag>
+        <Tag active>Tag1</Tag>
         {
-          [...'12345'].map((v, i) => <Tag key={i}>标签{i+2}</Tag>)
+          [...'12345'].map((v, i) => <Tag key={i}>Tag{i+2}</Tag>)
         }
       </div>
     )

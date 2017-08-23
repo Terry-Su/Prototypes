@@ -3,7 +3,7 @@ import React from 'react'
 import Grid from 'material-ui/Grid'
 
 import DetailBoxContent from './DetailBoxContent'
-import DetailBoxInfo from './DetailBoxInfo'
+import DetailBoxAddition from './DetailBoxAddition'
 
 export default function DetailBox() {
   return (
@@ -26,7 +26,7 @@ export default function DetailBox() {
           padding: '2em 0 0 0'
         }}
         children={
-          <DetailBoxInfo />
+          <DetailBoxAddition />
         }
       />
       

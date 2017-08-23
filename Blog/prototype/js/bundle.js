@@ -39004,7 +39004,7 @@ function Catalog(_ref) {
               backgroundColor: theme.catalog.activeBackgroundColor,
               color: theme.catalog.activeColor
             } },
-          '\u76EE\u5F551'
+          'Category name1'
         ),
         [].concat(_toConsumableArray('12345')).map(function (v, i) {
           return _react2.default.createElement(
@@ -39017,7 +39017,7 @@ function Catalog(_ref) {
                 color: theme.catalog.color
               }
             },
-            '\u76EE\u5F55',
+            'Category name',
             i + 2
           );
         })
@@ -39301,13 +39301,13 @@ var Tags = function (_Component) {
         _react2.default.createElement(
           _Tag2.default,
           { active: true },
-          '\u6807\u7B7E1'
+          'Tag1'
         ),
         [].concat(_toConsumableArray('12345')).map(function (v, i) {
           return _react2.default.createElement(
             _Tag2.default,
             { key: i },
-            '\u6807\u7B7E',
+            'Tag',
             i + 2
           );
         })
@@ -68155,7 +68155,7 @@ function NewestColumn(_ref) {
                   { item: true, md: 8, sm: 12, style: {
                       color: theme.newestColumn.color
                     } },
-                  '\u535A\u5BA2\u7684\u6807\u9898',
+                  'Blog\'s title',
                   Math.pow(i + 1, 10)
                 )
               )
@@ -69472,7 +69472,7 @@ function Notion() {
         { style: {
             color: 'black'
           } },
-        'Terry Su \u7684\u535A\u5BA2'
+        'Terry\xA0Su\'s\xA0blog'
       )
     )
   );
@@ -69863,7 +69863,7 @@ function ListBoxItem(_ref) {
           padding: '10px 0',
           color: theme.listBox.titleColor
         } },
-      '\u535A\u5BA2\u7684\u6807\u9898'
+      'Blog\'s title'
     ),
     _react2.default.createElement(
       _Typography2.default,
@@ -70065,9 +70065,9 @@ var _DetailBoxContent = __webpack_require__(1645);
 
 var _DetailBoxContent2 = _interopRequireDefault(_DetailBoxContent);
 
-var _DetailBoxInfo = __webpack_require__(1647);
+var _DetailBoxAddition = __webpack_require__(1691);
 
-var _DetailBoxInfo2 = _interopRequireDefault(_DetailBoxInfo);
+var _DetailBoxAddition2 = _interopRequireDefault(_DetailBoxAddition);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -70088,7 +70088,7 @@ function DetailBox() {
       style: {
         padding: '2em 0 0 0'
       },
-      children: _react2.default.createElement(_DetailBoxInfo2.default, null)
+      children: _react2.default.createElement(_DetailBoxAddition2.default, null)
     })
   );
 }
@@ -70132,78 +70132,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = "\n<h1>Introduction</h1>\n<p>MVVC is a light multi-page web developing framework.<br>\nGithub: <a href=\"https://github.com/Terry-Su/MVVC\">https://github.com/Terry-Su/MVVC</a></p>\n<h1>Background</h1>\n<ol>\n<li>In practical developing environment, react is too heavy to create an simple web page</li>\n<li>An project always contains mutiple web pages, instead of an single page which react's good at</li>\n<li>React and redux are the one of most popular and welcoming web developing mode</li>\n</ol>\n<h1>Concept</h1>\n<h2><strong>M</strong>: Model</h2>\n<p>Use fetch</p>\n<h2><strong>VV</strong>: View and view model</h2>\n<p>Use <a href=\"https://infernojs.org/\">inferno</a>(a light react framwork) and redux</p>\n<h2><strong>C</strong>: Controller</h2>\n<p>Multiple pages can share or inherit props and methods by contollers</p>\n<h2>Features</h2>\n<h3>Light react</h3>\n<p>Using <code>inferno</code> instead of react can reduce a large amount of  size of <code>bundle.js</code></p>\n<h3>Supports multiple projects and pages</h3>\n<p>We can choose one page or all pages in one project, or even all pages of all projects to develop</p>\n<h3>Inferno + Redux</h3>\n<p>A robust coing mode in web development</p>\n<h1>Getting started</h1>\n<p>First, just <code>git clone</code> the MVVC to local<br>\nThen, install dev dependencies:<br>\n<code>npm install</code><br>\nStart and view the demo on <a href=\"http://localhost:3000/projectExample/pageExample\">http://localhost:3000/projectExample/pageExample</a>:<br>\n<code>npm start</code></p>\n<h1>Contributing</h1>\n<p>If you found somewhere in codes to be improved or fixed, or just make a suggestion, don't hesitate to send a pull request!</p>\n<div id=\"detailCatalogData\" style=\"display:none;\">[{\"name\":\"Introduction\"},{\"name\":\"Background\"},{\"name\":\"Concept\",\"h2\":[\"M: Model\",\"VV: View and view model\",\"C: Controller\",\"Features\"]},{\"name\":\"Getting started\"}]</div>\n";
 
 /***/ }),
-/* 1647 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = DetailBoxInfo;
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _Tags = __webpack_require__(695);
-
-var _Tags2 = _interopRequireDefault(_Tags);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function DetailBoxInfo() {
-  return _react2.default.createElement(
-    'div',
-    { style: {
-        textAlign: 'right',
-        paddingTop: '20px',
-        fontSize: '14px'
-      } },
-    _react2.default.createElement(
-      'div',
-      { style: {
-          padding: '5px 0 5px 0'
-        } },
-      _react2.default.createElement(_Tags2.default, null)
-    ),
-    _react2.default.createElement(
-      'div',
-      { style: {
-          padding: '5px 0 5px 0'
-        } },
-      _react2.default.createElement(
-        'b',
-        null,
-        '\u521B\u5EFA\u65F6\u95F4\uFF1A '
-      ),
-      _react2.default.createElement(
-        'span',
-        null,
-        '2017/07/31 19:50'
-      )
-    ),
-    _react2.default.createElement(
-      'div',
-      { style: {
-          padding: '5px 0 5px 0'
-        } },
-      _react2.default.createElement(
-        'b',
-        null,
-        '\u8F6C\u8F7D\u8BF4\u660E\uFF1A '
-      ),
-      _react2.default.createElement(
-        'span',
-        null,
-        '\u672C\u6587\u4E3A\u539F\u521B\u6587\u7AE0\uFF0C\u8F6C\u8F7D\u8BF7\u6CE8\u660E\u51FA\u5904'
-      )
-    )
-  );
-}
-
-/***/ }),
+/* 1647 */,
 /* 1648 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -73506,6 +73435,75 @@ var AWrapper = function (_React$Component) {
 
 
 exports.default = AWrapper;
+
+/***/ }),
+/* 1691 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = DetailBoxAddition;
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Tags = __webpack_require__(695);
+
+var _Tags2 = _interopRequireDefault(_Tags);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function DetailBoxAddition() {
+  return _react2.default.createElement(
+    'div',
+    { style: {
+        textAlign: 'right',
+        paddingTop: '20px',
+        fontSize: '14px'
+      } },
+    _react2.default.createElement(
+      'div',
+      { style: {
+          padding: '5px 0 5px 0'
+        } },
+      _react2.default.createElement(_Tags2.default, null)
+    ),
+    _react2.default.createElement(
+      'div',
+      { style: {
+          padding: '5px 0 5px 0'
+        } },
+      _react2.default.createElement(
+        'b',
+        null,
+        'Created Time:\xA0\xA0'
+      ),
+      _react2.default.createElement(
+        'span',
+        null,
+        '2017/07/31 19:50'
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { style: {
+          padding: '5px 0 5px 0'
+        } },
+      _react2.default.createElement(
+        'b',
+        null,
+        'Reprinting Note:\xA0\xA0'
+      ),
+      _react2.default.createElement('span', null),
+      'This article is original, reprint please indicate the source.'
+    )
+  );
+}
 
 /***/ })
 /******/ ]);

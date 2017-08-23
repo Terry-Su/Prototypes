@@ -12,7 +12,7 @@ export default function Notion() {
         <h1 style={{
           color: 'black'
         }}>
-          Terry Su 的博客
+        Terry&nbsp;Su's&nbsp;blog
         </h1>
       </Paper>
     </div>
