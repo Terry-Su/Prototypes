@@ -1,2 +1,2 @@
 # The prototype of [Goals](https://github.com/Terry-Su/Goals)
-[View online](https://sf-terry.github.io/Prototypes/Goals/prototype)
+[View online](https://terry-su.github.io/Prototypes/Goals/prototype/)
