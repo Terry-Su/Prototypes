@@ -2,21 +2,25 @@ var webpack = require('webpack');
 var path = require('path');
 var express = require('express')
 var app = express()
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
 var NODE_DEV = process.env.NODE_DEV
 var NODE_ENV = process.env.NODE_ENV
 var NODE_PORT = process.env.NODE_PORT
 
 
 
-var plugins = []
+var plugins = [
+  new BundleAnalyzerPlugin()
+]
 if (NODE_ENV === 'prod') {
-  plugins.push(new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'));
-  plugins.push(new webpack.DefinePlugin({
-    'process.env': {
-      NODE_ENV: JSON.stringify('production')
-    }
-  }));
-  plugins.push(new webpack.optimize.UglifyJsPlugin());
+  // plugins.push(new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'));
+  // plugins.push(new webpack.DefinePlugin({
+  //   'process.env': {
+  //     NODE_ENV: JSON.stringify('production')
+  //   }
+  // }));
+  // plugins.push(new webpack.optimize.UglifyJsPlugin());
 }
 
 
