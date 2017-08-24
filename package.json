@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "cross-env NODE_PORT=3000 NODE_DEV=0 NODE_ENV=dev webpack --watch",
     "build": "cross-env NODE_PORT=3000 NODE_DEV=0 NODE_ENV=prod webpack -p",
-    "devtm": "cross-env NODE_PORT=3000 NODE_DEV=0 NODE_ENV=dev webpack --watch",
-    "prodtm": "cross-env NODE_PORT=3000 NODE_DEV=0 NODE_ENV=prod webpack -p",
+    "devgoals": "cross-env NODE_PORT=3000 NODE_DEV=0 NODE_ENV=dev webpack --watch",
+    "buildgoals": "cross-env NODE_PORT=3000 NODE_DEV=0 NODE_ENV=prod webpack -p",
     "devblog": "cross-env NODE_PORT=3000 NODE_DEV=1 NODE_ENV=dev webpack --watch",
     "buildblog": "cross-env NODE_PORT=3000 NODE_DEV=1 NODE_ENV=prod webpack -p"
   },

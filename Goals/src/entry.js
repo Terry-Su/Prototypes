@@ -1,5 +1,5 @@
 // style
-import './sass/app.scss'
+import './js/sass/app.scss'
 
 // polyfill
 import 'babel-polyfill'
